@@ -1,0 +1,344 @@
+/*
+  cocoNet GLOBAL STYLESHEET
+  ------------------------------------------------------------
+  HOW TO USE THIS FILE
+  1. Change the CSS variables in :root to update global colors.
+  2. Keep shared styles here so all sections feel consistent.
+  3. Add section-specific CSS under the clearly marked TEAM SECTION STYLES area.
+  4. Avoid fixed pixel widths for content; use max-width, %, min(), and grid/flex.
+  5. Add new responsive rules inside the existing media queries when possible.
+*/
+
+/* ===== 1. DESIGN TOKENS: edit these values to change the whole site's theme ===== */
+:root {
+  color-scheme: light;
+  /* Shared filled-button colors. Dark mode overrides these below. */
+  --button-bg: #07543d;
+  --button-bg-hover: #08714e;
+  --button-text: #ffffff;
+  --green-950: #063b2c;
+  --green-900: #07543d;
+  --green-800: #08714e;
+  --green-700: #12845c;
+  --green-100: #e2f5eb;
+  --green-50: #f1faf5;
+  --purple-50: #f6f5ff;
+  --page: #ffffff;
+  --surface: #f8faf9;
+  --surface-strong: #eef4f0;
+  --text: #15251e;
+  --muted: #64736b;
+  --border: #e1e9e4;
+  --footer-bg: #f5f6fc;
+  --shadow: 0 10px 35px rgba(6, 59, 44, .08);
+  --header-height: 78px;
+  --container: 1240px;
+  --radius: 14px;
+  font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark palette: JavaScript adds data-theme="dark" to the <html> element. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --green-950: #b9f2d4;
+  --green-900: #8fe0b5;
+  --green-800: #68c998;
+  --green-700: #4cb985;
+  /* Dark surfaces for filled buttons keep white button text readable in dark mode. */
+  --button-bg: #174b35;
+  --button-bg-hover: #226b4b;
+  --button-text: #ffffff;
+  --green-100: #163d2c;
+  --green-50: #10271d;
+  --purple-50: #171a29;
+  --page: #0d1511;
+  --surface: #121e18;
+  --surface-strong: #1b2a21;
+  --text: #eef7f1;
+  --muted: #a5b7ac;
+  --border: #2a3b31;
+  --footer-bg: #111922;
+  --shadow: 0 10px 35px rgba(0, 0, 0, .24);
+}
+
+/* ===== 2. GLOBAL RESET / ACCESSIBILITY ===== */
+* { box-sizing: border-box; }
+html { min-width: 320px; scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + 16px); }
+body { margin: 0; min-width: 320px; background: var(--page); color: var(--text); }
+body, button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+button, a { touch-action: manipulation; }
+button:focus-visible, a:focus-visible { outline: 3px solid #8bc9ac; outline-offset: 4px; }
+::selection { background: var(--green-100); color: var(--text); }
+
+/* Visually hidden until keyboard focus, then visible for accessibility. */
+.skip-link {
+  position: fixed; z-index: 1000; top: 8px; left: 8px;
+  padding: 10px 14px; border-radius: 8px; background: var(--green-900); color: #fff;
+  transform: translateY(-160%); transition: transform .18s ease;
+}
+.skip-link:focus { transform: translateY(0); }
+
+/* ===== 3. HEADER / NAVIGATION ===== */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in srgb, var(--page) 92%, transparent);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+}
+.header-inner {
+  width: min(var(--container), calc(100% - 48px)); min-height: var(--header-height);
+  margin-inline: auto; display: flex; align-items: center; gap: 22px;
+}
+.brand { display: inline-flex; align-items: center; gap: 9px; flex: 0 0 auto; }
+.brand-mark {
+  width: 36px; height: 36px; display: grid; place-items: center;
+  border-radius: 11px; background: var(--green-100); color: var(--green-900);
+}
+.brand-mark svg { width: 29px; height: 29px; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }
+.brand-name { font: 800 1.38rem/1 "Manrope", sans-serif; letter-spacing: -.07em; }
+.brand-name span { color: var(--green-800); }
+.primary-navigation { margin-left: auto; display: flex; align-items: center; gap: clamp(12px, 1.7vw, 27px); }
+.primary-navigation a {
+  color: var(--muted); font-size: .86rem; font-weight: 600; white-space: nowrap;
+  transition: color .18s ease, background .18s ease;
+}
+.primary-navigation a:hover, .primary-navigation a:focus-visible { color: var(--green-800); }
+.primary-navigation .nav-cta { padding: 12px 17px; border-radius: 10px; color: var(--button-text); background: var(--button-bg); }
+.primary-navigation .nav-cta:hover { background: var(--button-bg-hover); color: var(--button-text); }
+.theme-toggle {
+  width: 40px; height: 40px; flex: 0 0 auto; display: grid; place-items: center;
+  border: 1px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text); cursor: pointer;
+}
+.theme-icon { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.theme-icon-moon { display: none; }
+:root[data-theme="dark"] .theme-icon-sun { display: none; }
+:root[data-theme="dark"] .theme-icon-moon { display: block; }
+.menu-toggle {
+  display: none; width: 42px; height: 42px; padding: 10px; margin-left: auto;
+  border: 1px solid var(--border); border-radius: 11px; background: var(--surface); color: var(--text); cursor: pointer;
+}
+.menu-toggle span { display: block; width: 20px; height: 2px; margin: 4px auto; border-radius: 3px; background: currentColor; transition: transform .18s ease, opacity .18s ease; }
+.menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(6px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-6px) rotate(-45deg); }
+
+/* ===== 4. CONTENT AREA HELPERS =====
+   Add these classes to your section markup:
+   <section id="overview" class="content-section">
+     <div class="section-container"> ... </div>
+   </section>
+*/
+.content-section { padding: clamp(48px, 7vw, 96px) 0; }
+.section-container { width: min(var(--container), calc(100% - 48px)); margin-inline: auto; }
+.section-eyebrow { margin: 0 0 12px; color: var(--green-800); font-size: .75rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.content-section h1, .content-section h2 { margin: 0 0 18px; font-family: "Manrope", sans-serif; font-size: clamp(2rem, 4.3vw, 3.8rem); line-height: 1.08; letter-spacing: -.055em; }
+.content-section p { max-width: 72ch; color: var(--muted); line-height: 1.8; }
+
+/* Empty starter canvas is only a temporary guide. Remove this block once real content is added. */
+.empty-canvas { min-height: 42vh; display: grid; place-items: center; padding: 40px 24px; color: var(--muted); }
+.empty-canvas span { padding: 10px 14px; border: 1px dashed var(--border); border-radius: 10px; font-size: .9rem; }
+
+/* ===== 5. FOOTER ===== */
+.site-footer { background: var(--footer-bg); border-top: 1px solid var(--border); }
+.footer-main {
+  width: min(var(--container), calc(100% - 48px)); margin-inline: auto;
+  padding: clamp(44px, 6vw, 76px) 0 46px;
+  display: grid; grid-template-columns: minmax(220px, 1.35fr) repeat(2, minmax(135px, .7fr)) minmax(230px, 1.1fr);
+  gap: clamp(26px, 4vw, 60px);
+}
+.footer-brand-column { max-width: 340px; }
+.footer-brand { margin-bottom: 20px; }
+.footer-description, .footer-cta-column p { margin: 0; color: var(--muted); font-size: .91rem; line-height: 1.8; }
+.status-pill { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; padding: 8px 11px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); font-size: .75rem; font-weight: 600; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: #2ab879; box-shadow: 0 0 0 4px color-mix(in srgb, #2ab879 15%, transparent); }
+.footer-column { display: flex; flex-direction: column; align-items: flex-start; gap: 13px; }
+.footer-column h2 { margin: 2px 0 7px; font: 800 .94rem/1.3 "Manrope", sans-serif; letter-spacing: -.02em; }
+.footer-column > a:not(.footer-cta) { color: var(--muted); font-size: .86rem; line-height: 1.5; transition: color .18s ease; }
+.footer-column > a:hover { color: var(--green-800); }
+.eyebrow { color: var(--green-800); font-size: .67rem; font-weight: 800; letter-spacing: .14em; }
+.footer-cta-column h2 { margin: 0; font: 800 clamp(1.2rem, 1.8vw, 1.55rem)/1.35 "Manrope", sans-serif; letter-spacing: -.045em; }
+.footer-cta-column p { margin-top: -3px; font-size: .85rem; }
+.footer-cta { display: inline-flex; align-items: center; gap: 16px; margin-top: 4px; padding: 12px 15px; border-radius: 10px; background: var(--button-bg); color: var(--button-text); font-size: .84rem; font-weight: 700; transition: background .18s ease, transform .18s ease; }
+.footer-cta:hover { background: var(--button-bg-hover); color: var(--button-text); transform: translateY(-1px); }
+/* Keep the CTA text white: the general footer-link hover rule must not override it. */
+.footer-column > a.footer-cta:hover { color: var(--button-text); }
+.footer-cta span { font-size: 1rem; }
+.footer-bottom {
+  width: min(var(--container), calc(100% - 48px)); margin-inline: auto; padding: 21px 0;
+  border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.footer-bottom p { margin: 0; color: var(--muted); font-size: .78rem; }
+.footer-legal { display: flex; flex-wrap: wrap; gap: 20px; }
+.footer-legal a, .back-to-top { color: var(--muted); font-size: .78rem; }
+.footer-legal a:hover, .back-to-top:hover { color: var(--green-800); }
+.back-to-top { white-space: nowrap; }
+
+/* ===== 6. RESPONSIVE BREAKPOINTS =====
+   When adding new styles, check desktop, tablet, and phone layouts.
+   Keep the media queries ordered from wider screens to narrower screens.
+*/
+@media (max-width: 1120px) {
+  .header-inner { gap: 14px; width: min(var(--container), calc(100% - 36px)); }
+  .primary-navigation { gap: 13px; }
+  .primary-navigation a { font-size: .79rem; }
+  .primary-navigation .nav-cta { padding: 11px 13px; }
+  .footer-main { grid-template-columns: minmax(200px, 1.2fr) repeat(2, minmax(120px, .7fr)) minmax(200px, 1fr); gap: 28px; }
+}
+@media (max-width: 900px) {
+  :root { --header-height: 72px; }
+  .header-inner { width: calc(100% - 32px); }
+  .menu-toggle { display: block; }
+  .theme-toggle { margin-left: 0; }
+  .primary-navigation {
+    display: none; position: absolute; top: calc(100% + 1px); left: 0; right: 0;
+    margin: 0; padding: 14px 16px 20px; flex-direction: column; align-items: stretch; gap: 3px;
+    background: var(--page); border-bottom: 1px solid var(--border); box-shadow: var(--shadow);
+  }
+  .primary-navigation.is-open { display: flex; }
+  .primary-navigation a { padding: 13px 12px; font-size: .93rem; white-space: normal; border-radius: 8px; }
+  .primary-navigation a:hover { background: var(--surface); }
+  .primary-navigation .nav-cta { margin-top: 7px; text-align: center; }
+  .footer-main { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 38px 30px; }
+  .footer-brand-column { max-width: none; }
+  .footer-cta-column { grid-column: 1 / -1; max-width: 470px; }
+}
+@media (max-width: 560px) {
+  :root { --header-height: 66px; }
+  .header-inner { width: calc(100% - 28px); gap: 10px; }
+  .brand { gap: 7px; }
+  .brand-mark { width: 32px; height: 32px; border-radius: 9px; }
+  .brand-mark svg { width: 26px; height: 26px; }
+  .brand-name { font-size: 1.25rem; }
+  .menu-toggle { width: 39px; height: 39px; }
+  .theme-toggle { width: 39px; height: 39px; }
+  .footer-main { width: calc(100% - 36px); padding: 38px 0 34px; grid-template-columns: 1fr 1fr; gap: 34px 18px; }
+  .footer-brand-column, .footer-cta-column { grid-column: 1 / -1; }
+  .footer-column { gap: 12px; }
+  .footer-bottom { width: calc(100% - 36px); padding: 20px 0 24px; display: grid; grid-template-columns: 1fr auto; gap: 15px; }
+  .footer-bottom p { grid-column: 1 / -1; line-height: 1.6; }
+  .footer-legal { gap: 10px 16px; }
+  .back-to-top { justify-self: end; }
+}
+@media (max-width: 360px) {
+  .header-inner { width: calc(100% - 20px); gap: 7px; }
+  .brand-name { font-size: 1.13rem; }
+  .brand-mark { width: 29px; height: 29px; }
+  .menu-toggle, .theme-toggle { width: 36px; height: 36px; }
+  .footer-main, .footer-bottom { width: calc(100% - 28px); }
+  .footer-legal { gap: 9px 12px; }
+}
+
+/* Respect the visitor's reduced-motion preference. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* ===== 7. TEAM SECTION STYLES =====
+   Add custom styles below this line when a section needs its own design.
+   Prefix custom classes to avoid accidentally changing the header/footer.
+   Example: .overview-hero { ... } or .team-member-card { ... }
+*/
+
+
+/* ===== NAVIGATION POLISH: soft pill hover + current-section indicator =====
+   Only the navigation-link hover appearance is changed here.
+*/
+.primary-navigation a:not(.nav-cta) {
+  position: relative;
+  padding: 10px 12px;
+  border-radius: 9px;
+  transition: color .22s ease, background-color .22s ease, transform .22s ease;
+}
+.primary-navigation a:not(.nav-cta):hover,
+.primary-navigation a:not(.nav-cta):focus-visible {
+  color: var(--green-800);
+  background: var(--green-50);
+  transform: translateY(-1px);
+}
+.primary-navigation a:not(.nav-cta).is-active {
+  color: var(--green-800);
+  background: var(--green-100);
+}
+
+/* Thin progress line beneath the sticky header. Its fill follows the page scroll. */
+.nav-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  pointer-events: none;
+  overflow: hidden;
+  background: transparent;
+}
+.nav-progress-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-700), #7bcda3);
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
+}
+
+/* Mobile menu uses a soft full-row highlight so the current section is easy to spot. */
+@media (max-width: 900px) {
+  .primary-navigation a:not(.nav-cta) {
+    padding: 13px 12px;
+  }
+  .primary-navigation a:not(.nav-cta):hover,
+  .primary-navigation a:not(.nav-cta):focus-visible,
+  .primary-navigation a:not(.nav-cta).is-active {
+    background: var(--surface-strong);
+  }
+  .nav-progress { height: 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .primary-navigation a {
+    transition: none !important;
+  }
+}
+
+
+/* Wordmark styling matched to the supplied cocoNet reference. */
+.brand-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -1.1px;
+  line-height: 1;
+  color: #151515;
+}
+.brand-text span {
+  color: #087a4a;
+  position: relative;
+  display: inline-block;
+}
+.brand-text span::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 4px;
+  right: 0;
+  top: -3px;
+  background: currentColor;
+  border-radius: 100% 0 100% 0;
+  transform: rotate(-28deg);
+  transform-origin: center;
+  pointer-events: none;
+}
+
+/* Make the cocoNet wordmark readable in dark mode */
+[data-theme="dark"] .brand-text {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .brand-text span {
+  color: #087a4a;
+}

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Keeps the layout at the real device width on phones and tablets. Do not remove. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Lets the browser match native controls and browser chrome to the chosen theme. -->
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#07543d">
+  <meta name="description" content="cocoNet: practical digital support for coconut-growing communities.">
+  <title>cocoNet | Landing Page</title>
+
+  <!-- Optional web fonts. If offline, the system-font fallbacks in style.css will be used. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Global stylesheet: colors, typography, spacing, responsive layout, navigation and footer. -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- defer waits until HTML parsing is complete before running the menu/theme JavaScript. -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- ACCESSIBILITY: keyboard users can skip repeated navigation and jump to page content. -->
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- =========================================================
+       1. GLOBAL HEADER / NAVIGATION
+       Keep this header once at the top of the page.
+       To rename/reorder links, edit the links inside .primary-navigation.
+       Each href="#section-id" must match the id of a section inside <main>.
+       ========================================================= -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- BRAND: replace the text/logo here if the team updates the brand. -->
+      <a class="brand" href="#" aria-label="cocoNet home"><span class="brand-text">coco<span>Net</span></span></a>
+
+      <!-- MOBILE MENU BUTTON: visible on smaller screens. JS toggles aria-expanded and .is-open. -->
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu"
+              aria-expanded="false" aria-controls="primary-navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!--
+        NAVIGATION LINKS
+        Keep these IDs consistent with the section IDs below.
+        If your team changes a section name, update BOTH the href here and the section id.
+      -->
+      <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+        <a href="#overview">Overview</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#disease-detection">Disease Detection</a>
+        <a href="#farmer-stories">Farmer Stories</a>
+        <a href="#team">Team</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="#early-access">Get Early Access</a>
+      </nav>
+
+      <!-- THEME SWITCH: JS changes the page theme and saves the choice when storage is available. -->
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle dark mode">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.7 8.7 0 1 0 20.5 14.2Z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       2. TEAM CONTENT AREA
+       This is the only area where team members should add page sections.
+       Do not place your content above the header or below the footer.
+
+       HOW TO ADD A SECTION:
+       1) Copy one SECTION START/END example below.
+       2) Give it a unique id (example: id="overview").
+       3) Add your section content inside it.
+       4) Make sure the navigation href uses the same id, e.g. href="#overview".
+       5) Use class="content-section" to inherit the shared width and spacing.
+
+       Suggested ownership split:
+       - overview          -> intro / project overview
+       - how-it-works      -> steps or workflow
+       - disease-detection -> disease detection feature
+       - farmer-stories    -> farmer feedback / stories
+       - team              -> team member profiles
+       - early-access      -> access or contact area
+       ========================================================= -->
+  <main id="main-content">
+
+    <!-- SECTION START: OVERVIEW   -- Anupama 
+         Replace the placeholder with the Overview owner's content.
+         Keep id="overview" so the navigation link continues to work. -->
+    
+
+
+    
+    <section id="overview" class="content-section">
+      <div class="section-container">
+        <p class="section-eyebrow">ABOUT COCONET</p>
+        <h1>Your overview heading goes here</h1>
+        <p>Introduce the project, its target users, and the problem it aims to address.</p>
+      </div>
+    </section>
+   
+    <!-- SECTION END: OVERVIEW -->
+
+
+
+
+
+
+
+    <!-- SECTION START: HOW IT WORKS   -- Janith
+         Add the workflow, process steps, or system diagram in this section. -->
+    
+    <section id="how-it-works" class="content-section">
+      <div class="section-container">
+        <p class="section-eyebrow">HOW IT WORKS</p>
+        <h2>Explain the process</h2>
+        <p>Describe the main steps a farmer or other user follows.</p>
+      </div>
+    </section>
+   
+    <!-- SECTION END: HOW IT WORKS -->
+
+
+
+
+
+
+
+    <!-- SECTION START: DISEASE DETECTION feature explanation   -- Janani
+         Add the feature explanation, scan/upload flow, supported conditions, or demo here.
+         Only make claims that your project can support and demonstrate. -->
+    
+    <section id="disease-detection" class="content-section">
+      <div class="section-container">
+        <p class="section-eyebrow">DISEASE DETECTION</p>
+        <h2>Describe the detection feature</h2>
+        <p>Explain the intended workflow and current prototype capabilities.</p>
+      </div>
+    </section>
+   
+    <!-- SECTION END: DISEASE DETECTION -->
+
+
+
+
+
+
+    <!-- SECTION START: FARMER STORIES -- Sudil
+         Add verified interview findings, farmer quotes with permission, or case studies here.
+         Do not invent testimonials or present fictional quotes as real feedback. -->
+    
+    <section id="farmer-stories" class="content-section">
+      <div class="section-container">
+        <p class="section-eyebrow">FARMER STORIES</p>
+        <h2>Insights from the farming community</h2>
+        <p>Summarise real research or interview findings and identify the source where appropriate.</p>
+      </div>
+    </section>
+   
+    <!-- SECTION END: FARMER STORIES -->
+
+
+
+
+
+
+    <!-- SECTION START: MEET THE TEAM -- Isindu 
+         Add your five team members, roles, short bios, and approved profile images here. -->
+    
+    <section id="team" class="content-section">
+      <div class="section-container">
+        <p class="section-eyebrow">OUR TEAM</p>
+        <h2>Meet the cocoNet team</h2>
+        <p>Introduce each team member and their contribution.</p>
+      </div>
+    </section>
+   
+    <!-- SECTION END: MEET THE TEAM -->
+
+
+
+
+    
+
+    <!-- SECTION START: FAQ   -- Anupama 
+         The header CTA points here. If you do not need this section, change the CTA href. -->
+    
+    <section id="faq" class="content-section">
+      <div class="section-container">
+        <p class="section-eyebrow">GET INVOLVED</p>
+        <h2>Frequently Asked Questions</h2>
+        <p>Add your approved contact details or an early-access form.</p>
+      </div>
+    </section>
+   
+  
+    <!-- SECTION END: FAQ -->
+
+
+
+
+
+
+    <!-- SECTION START: EARLY ACCESS / CONTACT   -- Isindu
+         The header CTA points here. If you do not need this section, change the CTA href. -->
+    
+    <section id="early-access" class="content-section">
+      <div class="section-container">
+        <p class="section-eyebrow">GET INVOLVED</p>
+        <h2>Request Demo</h2>
+        <p>Add your approved contact details or an early-access form.</p>
+      </div>
+    </section>
+   
+  
+    <!-- SECTION END: EARLY ACCESS -->
+
+
+    
+
+  </main>
+
+  <!-- =========================================================
+       3. GLOBAL FOOTER
+       Keep this footer once at the bottom of the page.
+       Edit its labels and links to match the final content.
+       Placeholder links such as #research need a matching section or real URL.
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <!-- FOOTER BRAND: short, accurate description of the project. -->
+      <div class="footer-brand-column">
+        <a class="brand footer-brand" href="#" aria-label="cocoNet home"><span class="brand-text">coco<span>Net</span></span></a>
+        <p class="footer-description">Practical digital support for coconut farmers, helping communities make more informed decisions about palm health.</p>
+        <span class="status-pill"><span class="status-dot"></span> Growing a healthier coconut future</span>
+      </div>
+
+      <!-- FOOTER COLUMN: primary section links. Keep href IDs in sync with main sections. -->
+      <div class="footer-column">
+        <h2>Explore</h2>
+        <a href="#overview">Overview</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#disease-detection">Disease Detection</a>
+        <a href="#farmer-stories">Farmer Stories</a>
+        <a href="#team">Meet the Team</a>
+      </div>
+
+      <!-- FOOTER COLUMN: change placeholders to real sections/pages before release. -->
+      <div class="footer-column">
+        <h2>Project</h2>
+        <a href="#early-access">Early Access</a>
+        <a href="#research">Research &amp; Insights</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <!-- FOOTER CTA: adjust this copy and destination to match your agreed project scope. -->
+      <div class="footer-column footer-cta-column">
+        <span class="eyebrow">LET'S GROW TOGETHER</span>
+        <h2>Better knowledge.<br>Healthier palms.</h2>
+        <p>Follow our project as we work towards useful tools for coconut-growing communities.</p>
+        <a class="footer-cta" href="#early-access">Get Early Access <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <!-- FOOTER BOTTOM: year is filled automatically by script.js. -->
+    <div class="footer-bottom">
+      <p>© <span id="current-year"></span> cocoNet Project. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#privacy">Privacy</a>
+        <a href="#accessibility">Accessibility</a>
+        <a href="#documentation">Documentation</a>
+      </div>
+      <a class="back-to-top" href="#" aria-label="Back to top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
