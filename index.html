@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <!-- Keeps the layout at the real device width on phones and tablets. Do not remove. -->
@@ -14,16 +15,20 @@
   <!-- Optional web fonts. If offline, the system-font fallbacks in style.css will be used. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
 
   <!-- Global stylesheet: colors, typography, spacing, responsive layout, navigation and footer. -->
   <link rel="stylesheet" href="style.css">
-  
+
 
   <!-- defer waits until HTML parsing is complete before running the menu/theme JavaScript. -->
   <script src="script.js" defer></script>
-  
+
 </head>
+
 <body>
   <!-- ACCESSIBILITY: keyboard users can skip repeated navigation and jump to page content. -->
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -40,8 +45,8 @@
       <a class="brand" href="#" aria-label="cocoNet home"><span class="brand-text">coco<span>Net</span></span></a>
 
       <!-- MOBILE MENU BUTTON: visible on smaller screens. JS toggles aria-expanded and .is-open. -->
-      <button class="menu-toggle" type="button" aria-label="Open navigation menu"
-              aria-expanded="false" aria-controls="primary-navigation">
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
+        aria-controls="primary-navigation">
         <span></span><span></span><span></span>
       </button>
 
@@ -64,7 +69,9 @@
       <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle dark mode">
         <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r="4"></circle>
-          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+          <path
+            d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42">
+          </path>
         </svg>
         <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.7 8.7 0 1 0 20.5 14.2Z"></path>
@@ -98,8 +105,8 @@
     <!-- SECTION START: OVERVIEW   -- Anupama 
          Replace the placeholder with the Overview owner's content.
          Keep id="overview" so the navigation link continues to work. -->
-  
-    
+
+
     <section id="overview" class="content-section">
       <div class="section-container">
         <p class="section-eyebrow">ABOUT COCONET</p>
@@ -107,7 +114,7 @@
         <p>Introduce the project, its target users, and the problem it aims to address.</p>
       </div>
     </section>
-   
+
     <!-- SECTION END: OVERVIEW -->
 
 
@@ -118,15 +125,195 @@
 
     <!-- SECTION START: HOW IT WORKS   -- Janith
          Add the workflow, process steps, or system diagram in this section. -->
-    
+
     <section id="how-it-works" class="content-section">
-      <div class="section-container">
-        <p class="section-eyebrow">HOW IT WORKS</p>
-        <h2>Explain the process</h2>
-        <p>Describe the main steps a farmer or other user follows.</p>
+    
+      <div class="section-container hiw-container">
+        <!-- Section Header -->
+        <div class="head">
+          <div class="head-in">
+            <div class="eyebrow">How cocoNet Works</div>
+            <h2>From a Leaf Photo to a Nationwide Disease Map</h2>
+            <p class="lead">Upload a coconut leaf photo and CocoGuard detects WCWLD and CCI, then shares every result in one central database that farmers and authorities can both see.</p>
+          </div>
+        </div>
+
+        <!-- Dynamic Showcase Layout -->
+        <div class="showcase">
+          <!-- Flow Line SVG (Drawn and animated by script.js) -->
+          <svg class="flow" id="flow" aria-hidden="true">
+            <defs>
+              <filter id="blur" filterUnits="userSpaceOnUse" x="-200" y="-200" width="4000" height="4000">
+                <feGaussianBlur stdDeviation="4" />
+              </filter>
+            </defs>
+          </svg>
+
+          <!-- Left Column: Steps 01 & 02 -->
+          <div class="col left">
+            <article class="step">
+              <div class="step-top">
+                <div class="num">01</div>
+                <div class="pill"><i></i>Any Phone</div>
+              </div>
+              <div class="text">
+                <h3>Snap or Upload a Leaf</h3>
+                <p>Farmers photograph a coconut leaflet, upper surface for wilt and lower surface for caterpillars, or upload one from the gallery.</p>
+              </div>
+              <div class="spec">
+                <span class="l">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#006C49" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 8h3l2-3h6l2 3h3v11H4z" />
+                    <circle cx="12" cy="13" r="3.5" />
+                  </svg>
+                  Leaf Photo
+                </span>
+                <span class="tag">JPEG • Camera or Gallery</span>
+              </div>
+            </article>
+
+            <article class="step">
+              <div class="step-top">
+                <div class="num">02</div>
+                <div class="pill alt"><i></i>Deep Learning</div>
+              </div>
+              <div class="text">
+                <h3>AI Detects WCWLD &amp; CCI</h3>
+                <p>Transfer-learning CNNs classify wilt and grade its severity, while Mask R-CNN and YOLO measure caterpillar damage and count larvae.</p>
+              </div>
+              <div class="spec">
+                <span class="l" style="color: #004328;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#004328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="6" y="6" width="12" height="12" rx="2" />
+                    <path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4" />
+                  </svg>
+                  WCWLD · CCI
+                </span>
+                <span class="r" style="color: #006C49;">Severity + Count</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- Center Column: Interactive Phone Mockup -->
+          <div class="col center">
+            <div class="phone" aria-label="CocoGuard Mobile app preview">
+              <div class="notch"><b></b><u></u></div>
+              <div class="screen">
+                <div class="scan" id="scan"></div>
+
+                <div class="hud">
+                  <div class="target">
+                    <div class="trow">
+                      <span class="lesion">Flaccidity</span>
+                      <span class="ov">CONF 0.94</span>
+                    </div>
+                    <div class="cross"><i></i></div>
+                    <div class="trow">
+                      <span class="ov w">Upper surface</span>
+                      <span class="match">WCWLD MATCH</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="status">
+                  <div class="sb">
+                    <b>09:41</b>
+                    <span>
+                      <svg width="12" height="10" viewBox="0 0 24 20" fill="none" stroke="#6FFBBE" stroke-width="3" stroke-linecap="round">
+                        <path d="M2 7c6-6 14-6 20 0M6 11.5c4-4 8-4 12 0M10 16c1.2-1.2 2.8-1.2 4 0" />
+                      </svg>
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="#fff"><path d="M10 0v10H0z" /></svg>
+                      <svg width="7" height="10" viewBox="0 0 7 10" fill="#fff"><rect x="1" y="0" width="5" height="10" rx="1.2" /></svg>
+                    </span>
+                  </div>
+                  <div class="nav">
+                    <div class="brand"><span class="logo">C</span>cocoNet</div>
+                    <span class="mode">Leaf Scan Mode</span>
+                  </div>
+                </div>
+
+                <div class="drawer">
+                  <div class="grab"></div>
+                  <div class="inf">
+                    <span class="a"><i></i>Early Stage Detected</span>
+                    <span class="c">94% Confidence</span>
+                  </div>
+                  <div class="dx">
+                    <div>
+                      <h4>Leaf Wilt (WCWLD)</h4>
+                      <em>Weligama Coconut Leaf Wilt</em>
+                    </div>
+                    <div class="rt">
+                      <b>Mild Severity</b>
+                      <code>Flaccidity only</code>
+                    </div>
+                  </div>
+                  <div class="act">
+                    <button class="rx" type="button">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 16V5M7 10l5-5 5 5M5 20h14" />
+                      </svg>
+                      Sync to National Database
+                    </button>
+                    <button class="sc" type="button" aria-label="Scan again">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#006C49" stroke-width="2.4" stroke-linecap="round">
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M3 8V4h4M21 8V4h-4M3 16v4h4M21 16v4h-4" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="dots"><i></i><i></i><i></i><i></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Steps 03 & 04 -->
+          <div class="col right">
+            <article class="step">
+              <div class="step-top">
+                <div class="num">03</div>
+                <div class="pill"><i></i>Cloud Sync</div>
+              </div>
+              <div class="text">
+                <h3>Central National Database</h3>
+                <p>Each diagnosis is saved with its location, date, disease and severity, building one shared and always-current record of coconut health.</p>
+              </div>
+              <div class="spec">
+                <span class="l">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#006C49" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <ellipse cx="12" cy="5" rx="8" ry="3" />
+                    <path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" />
+                  </svg>
+                  Geotagged Records
+                </span>
+                <span class="r" style="color: #004328;">Live Sync</span>
+              </div>
+            </article>
+
+            <article class="step">
+              <div class="step-top">
+                <div class="num">04</div>
+                <div class="pill alt"><i></i>Open Access</div>
+              </div>
+              <div class="text">
+                <h3>Shared Visibility</h3>
+                <p>Authorities monitor hotspots and plan containment, while farmers see their own results and nearby cases from the same database.</p>
+              </div>
+              <div class="spec">
+                <span class="l">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#006C49" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 21h18M5 21V10M9 21V10M15 21V10M19 21V10M2 10l10-6 10 6z" />
+                  </svg>
+                  Gov Dashboard
+                </span>
+                <span class="r" style="color: #707971;">Farmer View</span>
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
-   
     <!-- SECTION END: HOW IT WORKS -->
 
 
@@ -138,7 +325,7 @@
     <!-- SECTION START: DISEASE DETECTION feature explanation   -- Janani
          Add the feature explanation, scan/upload flow, supported conditions, or demo here.
          Only make claims that your project can support and demonstrate. -->
-    
+
     <section id="disease-detection" class="content-section">
       <div class="section-container">
         <p class="section-eyebrow">DISEASE DETECTION</p>
@@ -146,7 +333,7 @@
         <p>Explain the intended workflow and current prototype capabilities.</p>
       </div>
     </section>
-   
+
     <!-- SECTION END: DISEASE DETECTION -->
 
 
@@ -157,7 +344,7 @@
     <!-- SECTION START: FARMER STORIES -- Sudil
          Add verified interview findings, farmer quotes with permission, or case studies here.
          Do not invent testimonials or present fictional quotes as real feedback. -->
-    
+
     <section id="farmer-stories" class="content-section">
       <div class="section-container">
         <p class="section-eyebrow">FARMER STORIES</p>
@@ -165,7 +352,7 @@
         <p>Summarise real research or interview findings and identify the source where appropriate.</p>
       </div>
     </section>
-   
+
     <!-- SECTION END: FARMER STORIES -->
 
 
@@ -175,7 +362,7 @@
 
     <!-- SECTION START: MEET THE TEAM -- Isindu 
          Add your five team members, roles, short bios, and approved profile images here. -->
-    
+
     <section id="team" class="content-section">
       <div class="section-container">
         <p class="section-eyebrow">OUR TEAM</p>
@@ -183,17 +370,17 @@
         <p>Introduce each team member and their contribution.</p>
       </div>
     </section>
-   
+
     <!-- SECTION END: MEET THE TEAM -->
 
 
 
 
-    
+
 
     <!-- SECTION START: FAQ   -- Anupama 
          The header CTA points here. If you do not need this section, change the CTA href. -->
-    
+
     <section id="faq" class="content-section">
       <div class="section-container">
         <p class="section-eyebrow">GET INVOLVED</p>
@@ -201,8 +388,8 @@
         <p>Add your approved contact details or an early-access form.</p>
       </div>
     </section>
-   
-  
+
+
     <!-- SECTION END: FAQ -->
 
 
@@ -212,7 +399,7 @@
 
     <!-- SECTION START: EARLY ACCESS / CONTACT   -- Isindu
          The header CTA points here. If you do not need this section, change the CTA href. -->
-    
+
     <section id="early-access" class="content-section">
       <div class="section-container">
         <p class="section-eyebrow">GET INVOLVED</p>
@@ -220,8 +407,8 @@
         <p>Add your approved contact details or an early-access form.</p>
       </div>
     </section>
-   
-  
+
+
     <!-- SECTION END: EARLY ACCESS -->
 
 
@@ -239,8 +426,10 @@
     <div class="footer-main">
       <!-- FOOTER BRAND: short, accurate description of the project. -->
       <div class="footer-brand-column">
-        <a class="brand footer-brand" href="#" aria-label="cocoNet home"><span class="brand-text">coco<span>Net</span></span></a>
-        <p class="footer-description">Practical digital support for coconut farmers, helping communities make more informed decisions about palm health.</p>
+        <a class="brand footer-brand" href="#" aria-label="cocoNet home"><span
+            class="brand-text">coco<span>Net</span></span></a>
+        <p class="footer-description">Practical digital support for coconut farmers, helping communities make more
+          informed decisions about palm health.</p>
         <span class="status-pill"><span class="status-dot"></span> Growing a healthier coconut future</span>
       </div>
 
@@ -284,4 +473,5 @@
     </div>
   </footer>
 </body>
+
 </html>
