@@ -834,7 +834,7 @@ a:focus-visible {
 }
 
 [data-theme="dark"] .brand-text span {
-  color: #087a4a;
+  color: #4cb985;
 }
 
 
@@ -842,7 +842,1340 @@ a:focus-visible {
 
 /* Anupama Styles */
 
+/* ===== Anupama Styles: Overview Section ===== */
+
+.coconet-overview {
+  --overview-accent: #63e6b0;
+
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  background:
+    radial-gradient(ellipse at 95% 55%, var(--green-50), transparent 48%),
+    var(--page);
+}
+
+/* Top alert strip */
+
+.coconet-overview .overview-alert {
+  width: 100%;
+  padding: 10px max(24px, calc((100% - var(--container)) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  border-top: 2px dotted #38a8ff;
+  background: var(--green-50);
+  color: var(--text);
+  font-size: 0.75rem;
+  border-top: none;
+}
+
+.coconet-overview .overview-alert-message {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.coconet-overview .overview-alert-message strong {
+  color: var(--green-800);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+
+.coconet-overview .overview-alert-dot,
+.coconet-overview .overview-badge-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--green-700);
+}
+
+.coconet-overview .overview-alert-link {
+  color: var(--green-800);
+  font-weight: 700;
+}
+
+.coconet-overview .overview-alert-link:hover {
+  text-decoration: underline;
+}
+
+/* Main hero layout */
+
+.coconet-overview .section-container {
+  padding-top: clamp(48px, 6vw, 76px);
+  padding-bottom: clamp(48px, 6vw, 76px);
+}
+
+.coconet-overview .overview-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 70px);
+}
+
+.coconet-overview .overview-content {
+  min-width: 0;
+}
+
+.coconet-overview .overview-badge {
+  width: fit-content;
+  max-width: 100%;
+  margin: 20px 0;
+  padding: 9px 14px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.coconet-overview .overview-content h1 {
+  margin: 0 0 20px;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(2.2rem, 4.1vw, 3.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.055em;
+  color: var(--text);
+}
+
+.coconet-overview .overview-highlight {
+  color: var(--green-800);
+  text-decoration: underline;
+  text-decoration-color: var(--overview-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+.coconet-overview .overview-description {
+  max-width: 60ch;
+  margin: 0 0 25px;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.85;
+}
+
+/* Keep global paragraph styles from adding unwanted spacing */
+
+.coconet-overview .overview-content > p:not(.section-eyebrow) {
+  max-width: 60ch;
+}
+
+/* Call-to-action buttons */
+
+.coconet-overview .overview-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.coconet-overview .overview-button {
+  min-height: 46px;
+  padding: 12px 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.coconet-overview .overview-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.coconet-overview .overview-button-primary {
+  color: var(--button-text);
+  background: var(--button-bg);
+}
+
+.coconet-overview .overview-button-primary:hover {
+  color: var(--button-text);
+  background: var(--button-bg-hover);
+}
+
+.coconet-overview .overview-button-secondary {
+  color: var(--text);
+  border-color: var(--border);
+  background: var(--surface);
+}
+
+.coconet-overview .overview-button-secondary:hover {
+  background: var(--surface-strong);
+}
+
+.coconet-overview .overview-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.coconet-overview .overview-benefits > span > span {
+  margin-right: 5px;
+  color: var(--green-800);
+  font-weight: 800;
+}
+
+/* Decorative coconut palm illustration */
+
+.coconet-overview .overview-visual {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 440px;
+  min-width: 0;
+  min-height: 410px;
+  margin-inline: auto;
+  display: grid;
+  place-items: center;
+}
+
+.coconet-overview .overview-visual-glow {
+  position: absolute;
+  z-index: -1;
+  width: 85%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--green-100);
+  filter: blur(35px);
+  opacity: 0.8;
+}
+
+.coconet-overview .overview-plant-card {
+  position: relative;
+  width: min(78%, 300px);
+  overflow: hidden;
+  border: 8px solid var(--surface-strong);
+  border-radius: 23px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.coconet-overview .overview-card-header {
+  min-height: 58px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  background: var(--surface);
+}
+
+.coconet-overview .overview-card-symbol {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--green-800);
+  background: var(--green-100);
+  font-size: 1.4rem;
+}
+
+.coconet-overview .overview-card-header strong,
+.coconet-overview .overview-card-header small {
+  display: block;
+}
+
+.coconet-overview .overview-card-header strong {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.95rem;
+}
+
+.coconet-overview .overview-card-header small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.55rem;
+  letter-spacing: 0.07em;
+}
+
+.coconet-overview .overview-live-dot {
+  width: 8px;
+  height: 8px;
+  margin-left: auto;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #31bd83;
+}
+
+/* Illustration built in CSS, so no external image is required */
+
+.coconet-overview .overview-plant-art {
+  position: relative;
+  height: 285px;
+  overflow: hidden;
+}
+
+.coconet-overview .overview-plant-art img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.coconet-overview .overview-card-caption {
+  padding: 15px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+}
+
+.coconet-overview .overview-caption-icon {
+  width: 35px;
+  height: 35px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--green-800);
+  background: var(--green-100);
+}
+
+.coconet-overview .overview-card-caption strong,
+.coconet-overview .overview-card-caption small {
+  display: block;
+}
+
+.coconet-overview .overview-card-caption strong {
+  color: var(--text);
+  font-size: 0.77rem;
+}
+
+.coconet-overview .overview-card-caption small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.65rem;
+  line-height: 1.5;
+}
+
+/* Floating information cards */
+
+.coconet-overview .overview-floating-card {
+  position: absolute;
+  z-index: 2;
+  max-width: calc(100% - 8px);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--page);
+  box-shadow: var(--shadow);
+}
+
+.coconet-overview .overview-floating-top {
+  top: 55px;
+  left: 0;
+}
+
+.coconet-overview .overview-floating-bottom {
+  right: 0;
+  bottom: 45px;
+}
+
+.coconet-overview .overview-floating-icon {
+  width: 35px;
+  height: 35px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  color: var(--green-800);
+  background: var(--green-100);
+  font-size: 1.2rem;
+}
+
+.coconet-overview .overview-floating-card small,
+.coconet-overview .overview-floating-card strong {
+  display: block;
+  white-space: nowrap;
+}
+
+.coconet-overview .overview-floating-card small {
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 0.58rem;
+}
+
+.coconet-overview .overview-floating-card strong {
+  color: var(--text);
+  font-size: 0.7rem;
+}
+
+/* Bottom highlights bar */
+
+.coconet-overview .overview-highlights {
+  width: 100%;
+  padding: 32px max(24px, calc((100% - var(--container)) / 2));
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  color: #ffffff;
+  background: #063b2c;
+}
+
+.coconet-overview .overview-highlight-item {
+  min-width: 0;
+}
+
+.coconet-overview .overview-highlight-number {
+  display: block;
+  margin-bottom: 12px;
+  color: #63e6b0;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.coconet-overview .overview-highlight-item > strong {
+  display: block;
+  margin-bottom: 7px;
+  color: #ffffff;
+  font-size: 0.88rem;
+}
+
+.coconet-overview .overview-highlight-item > p {
+  margin: 0;
+  color: #b4d4c7;
+  font-size: 0.73rem;
+  line-height: 1.65;
+}
+
+/* Dark mode uses the existing global theme */
+
+:root[data-theme="dark"] .coconet-overview {
+  background:
+    radial-gradient(ellipse at 95% 55%, var(--green-50), transparent 48%),
+    var(--page);
+}
+
+:root[data-theme="dark"] .coconet-overview .overview-alert {
+  background: var(--surface);
+}
+
+:root[data-theme="dark"] .coconet-overview .overview-plant-art {
+  background: linear-gradient(180deg, #244d39 0%, #1d4834 60%, #183b2b 100%);
+}
+
+:root[data-theme="dark"] .coconet-overview .overview-hill-back {
+  background: #276747;
+}
+
+:root[data-theme="dark"] .coconet-overview .overview-hill-front {
+  background: #174d35;
+}
+
+:root[data-theme="dark"] .coconet-overview .overview-highlights {
+  background: #081f17;
+}
+
+/* Responsive layout */
+
+@media (max-width: 900px) {
+  .coconet-overview .overview-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.85fr);
+    gap: 24px;
+  }
+
+  .coconet-overview .overview-content h1 {
+    font-size: clamp(2rem, 4.2vw, 3rem);
+  }
+
+  .coconet-overview .overview-visual {
+    transform: scale(0.94);
+  }
+
+  .coconet-overview .overview-highlights {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .coconet-overview .overview-alert {
+    padding: 12px 20px;
+    align-items: flex-start;
+    flex-direction: column;
+    border-top: none;
+  }
+
+  .coconet-overview .section-container {
+    width: calc(100% - 36px);
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .coconet-overview .overview-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .coconet-overview .overview-content h1 {
+    font-size: clamp(2.25rem, 9vw, 3.2rem);
+  }
+
+  .coconet-overview .overview-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .coconet-overview .overview-button {
+    width: 100%;
+  }
+
+  .coconet-overview .overview-benefits {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .coconet-overview .overview-visual {
+    width: 100%;
+    max-width: 400px;
+    min-height: 410px;
+    transform: none;
+  }
+
+  .coconet-overview .overview-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 18px;
+    padding: 30px 22px;
+  }
+}
+
+@media (max-width: 380px) {
+  .coconet-overview .overview-visual {
+    transform: scale(0.92);
+    transform-origin: top center;
+    margin-bottom: -28px;
+  }
+
+  .coconet-overview .overview-floating-card {
+    padding: 9px;
+    gap: 7px;
+  }
+
+  .coconet-overview .overview-floating-card strong {
+    font-size: 0.62rem;
+  }
+
+  .coconet-overview .overview-highlights {
+    padding-inline: 18px;
+    gap: 24px 14px;
+  }
+}
+
+
+
+/* ===== cocoNet 3D disease scanner ===== */
+
+.coconet-overview .overview-visual {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 500px;
+  min-width: 0;
+  min-height: 580px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  perspective: 1400px;
+}
+
+.coconet-overview .overview-visual::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 85%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--green-100);
+  filter: blur(55px);
+  opacity: .85;
+}
+
+/* Device frame */
+
+.coconet-overview .overview-phone {
+  position: relative;
+  width: min(74%, 350px);
+  aspect-ratio: 0.66;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid #30394d;
+  border-radius: 36px;
+  background: #202a3e;
+
+  /* One device frame, without the doubled offset outline */
+  box-shadow:
+    0 28px 48px rgba(14, 30, 24, 0.24),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+
+  transform: rotateY(-5deg) rotateX(1deg);
+  transform-style: preserve-3d;
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+
+
+.coconet-overview .overview-phone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 25px;
+  background: #eef1ed;
+  
+}
+
+
+/* Top device information */
+.coconet-overview .overview-device-bar {
+  position: absolute;
+  z-index: 4;
+  top: 4%;
+  left: 5%;
+  right: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  color: #f3f5fc;
+  font-size: clamp(7px, .75vw, 10px);
+}
+
+.coconet-overview .overview-device-status,
+.coconet-overview .overview-device-gps {
+  min-width: 0;
+  min-height: 48px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 8px;
+  background: rgba(40, 48, 63, .96);
+  line-height: 1.5;
+}
+
+.coconet-overview .overview-device-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #63f3bd;
+}
+
+/* Photo fills the available screen */
+.coconet-overview .overview-leaf-photo {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #526f3e;
+}
+
+.coconet-overview .overview-leaf-photo > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* AI detection rectangle */
+.coconet-overview .overview-detection-box {
+  position: absolute;
+  z-index: 2;
+  top: 29%;
+  left: 23%;
+  width: 53%;
+  height: 30%;
+  border: 2px dashed #63f3bd;
+  border-radius: 7px;
+  color: #63f3bd;
+  font-size: clamp(7px, .75vw, 10px);
+}
+
+.coconet-overview .overview-detection-label {
+  position: absolute;
+  top: 7%;
+  left: -2px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  color: #fff;
+  background: #004b32;
+  line-height: 1.45;
+}
+
+.coconet-overview .overview-detection-confidence {
+  position: absolute;
+  top: 7%;
+  right: 3%;
+  line-height: 1.5;
+}
+
+.coconet-overview .overview-detection-area {
+  position: absolute;
+  left: 5%;
+  bottom: 7%;
+  color: #fff;
+  text-shadow: 0 1px 4px #26362b;
+}
+
+.coconet-overview .overview-detection-target {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  font-size: 17px;
+}
+
+/* White diagnosis panel */
+.coconet-overview .overview-result-card {
+  position: absolute;
+  z-index: 3;
+  left: 5%;
+  right: 5%;
+  bottom: 4%;
+  padding: 16px 14px;
+  border: 1px solid rgba(255, 255, 255, .8);
+  border-radius: 18px;
+  color: #172033;
+  background: rgba(250, 249, 251, .98);
+  box-shadow: 0 15px 30px rgba(14, 30, 24, .18);
+}
+
+.coconet-overview .overview-result-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: clamp(7px, .75vw, 10px);
+}
+
+.coconet-overview .overview-result-meta strong {
+  color: #cf2929;
+}
+
+.coconet-overview .overview-result-meta span {
+  color: #007750;
+  font-weight: 800;
+  text-align: right;
+}
+
+.coconet-overview .overview-result-card h2 {
+  margin: 18px 0 2px;
+  color: #172033;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(15px, 1.6vw, 22px);
+  line-height: 1.2;
+  letter-spacing: -.04em;
+}
+
+.coconet-overview .overview-result-card em {
+  display: block;
+  color: #778078;
+  font-size: clamp(9px, .95vw, 13px);
+}
+
+.coconet-overview .overview-result-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 22px;
+  padding-right: 40px;
+  color: #4d5851;
+  font-size: clamp(8px, .8vw, 11px);
+  line-height: 1.55;
+}
+
+.coconet-overview .overview-result-details strong {
+  color: #005239;
+}
+
+
+.coconet-overview .overview-result-ring {
+  --percentage: 90.4%;
+
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: 55px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+
+  background: conic-gradient(
+    from 180deg,
+    #007750 0 var(--percentage),
+    #e9edff var(--percentage) 100%
+  );
+
+  color: #172033;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.coconet-overview .overview-result-ring span {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+}
+
+
+/* Floating cards retain their original content */
+.coconet-overview .overview-floating-card {
+  position: absolute;
+  z-index: 5;
+  max-width: 78%;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--page);
+  box-shadow: 0 14px 32px rgba(15, 35, 27, .14);
+}
+
+.coconet-overview .overview-floating-top {
+  top: 25%;
+  left: 0%;
+}
+
+.coconet-overview .overview-floating-bottom {
+  right: -5%;
+  bottom: 38%;
+}
+
+.coconet-overview .overview-floating-icon {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--green-800);
+  background: var(--green-100);
+}
+
+.coconet-overview .overview-floating-card small,
+.coconet-overview .overview-floating-card strong {
+  display: block;
+  white-space: nowrap;
+}
+
+.coconet-overview .overview-floating-card small {
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: .6rem;
+}
+
+.coconet-overview .overview-floating-card strong {
+  color: var(--text);
+  font-size: .72rem;
+}
+
+/* Interactive 3D hover */
+@media (hover: hover) and (pointer: fine) {
+  .coconet-overview .overview-phone:hover,
+  .coconet-overview .overview-phone:focus-visible {
+    transform: rotateY(0deg) rotateX(0deg) translateY(-8px) scale(1.025);
+    box-shadow:
+      0 42px 70px rgba(14, 30, 24, .3),
+      inset 0 0 0 2px rgba(255, 255, 255, .1);
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .coconet-overview .overview-visual {
+    min-height: 500px;
+  }
+
+  .coconet-overview .overview-phone {
+    width: min(75%, 310px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .coconet-overview .overview-visual {
+    max-width: 420px;
+    min-height: 490px;
+  }
+
+  .coconet-overview .overview-phone {
+    width: min(72%, 285px);
+    padding: 8px;
+    border-radius: 29px;
+    transform: none;
+  }
+
+  .coconet-overview .overview-phone-screen {
+    border-radius: 21px;
+  }
+
+  .coconet-overview .overview-floating-top {
+    top: 18%;
+    left: 0;
+  }
+
+  .coconet-overview .overview-floating-bottom {
+    right: 0;
+    bottom: 12%;
+  }
+
+  .coconet-overview .overview-floating-card {
+    padding: 9px;
+    gap: 7px;
+  }
+
+  .coconet-overview .overview-floating-card strong {
+    font-size: .62rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .coconet-overview .overview-visual {
+    min-height: 430px;
+  }
+
+  .coconet-overview .overview-phone {
+    width: 70%;
+    padding: 6px;
+    border-radius: 24px;
+  }
+
+  .coconet-overview .overview-floating-card {
+    max-width: 76%;
+    padding: 7px;
+    gap: 6px;
+  }
+
+  .coconet-overview .overview-floating-card small {
+    font-size: .49rem;
+  }
+
+  .coconet-overview .overview-floating-card strong {
+    font-size: .57rem;
+  }
+
+  .coconet-overview .overview-floating-top {
+    top: 27%;
+    left: 0%;
+  }
+
+  .coconet-overview .overview-floating-bottom {
+    right: 1%;
+    bottom: 38%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coconet-overview .overview-phone {
+    transition: none;
+    transform: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .coconet-overview .overview-result-ring {
+    width: 50px;
+    font-size: 9px;
+  }
+}
+
+/* ===== End 3D disease scanner ===== */
+
+
+
+
+
+/* ===== cocoNet FAQ Section ===== */
+
+.coconet-faq {
+  padding: 90px 0;
+  background: var(--page);
+}
+
+.coconet-faq .faq-heading {
+  max-width: 800px;
+  margin: 0 auto 46px;
+  text-align: center;
+}
+
+.coconet-faq .faq-heading .section-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: var(--green-100);
+  color: var(--green-800);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+.coconet-faq .faq-heading h2 {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: clamp(28px, 3.5vw, 50px);
+  line-height: 1.2;
+}
+
+.coconet-faq .faq-intro {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.coconet-faq .faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.coconet-faq .faq-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 26px 24px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.coconet-faq .faq-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--green-700);
+}
+
+.coconet-faq .faq-icon {
+  display: flex;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--green-100);
+  color: var(--green-800);
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.coconet-faq .faq-content {
+  min-width: 0;
+}
+
+.coconet-faq .faq-content h3 {
+  margin: 3px 0 12px;
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.coconet-faq .faq-content p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.coconet-faq .faq-contact {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 44px;
+  padding: 28px 32px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--surface-strong);
+  box-shadow: var(--shadow);
+}
+
+.coconet-faq .faq-contact-icon {
+  display: flex;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: var(--green-800);
+  color: #fff;
+  font-size: 23px;
+}
+
+.coconet-faq .faq-contact-text {
+  flex: 1;
+}
+
+.coconet-faq .faq-contact-text h3 {
+  margin: 0 0 5px;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.coconet-faq .faq-contact-text p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.coconet-faq .faq-contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 9px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.coconet-faq .faq-contact-button:hover {
+  background: var(--button-bg-hover);
+  transform: translateY(-2px);
+}
+
+.coconet-faq .faq-contact-button:focus-visible {
+  outline: 3px solid var(--green-700);
+  outline-offset: 4px;
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 760px) {
+  .coconet-faq {
+    padding: 65px 0;
+  }
+
+  .coconet-faq .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .coconet-faq .faq-heading {
+    margin-bottom: 32px;
+  }
+
+  .coconet-faq .faq-card {
+    padding: 22px 18px;
+  }
+
+  .coconet-faq .faq-contact {
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+    padding: 22px;
+  }
+
+  .coconet-faq .faq-contact-text {
+    flex-basis: calc(100% - 65px);
+  }
+
+  .coconet-faq .faq-contact-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+
+
+
+
+
+/* Independent columns: neighbouring cards never stretch */
+.coconet-faq .faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 22px;
+}
+
+.coconet-faq .faq-column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 22px;
+  min-width: 0;
+}
+
+.coconet-faq .faq-card {
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+  height: auto;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Question and arrow */
+.coconet-faq .faq-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.coconet-faq .faq-content h3 {
+  position: relative;
+  padding-right: 25px;
+  cursor: pointer;
+}
+
+.coconet-faq .faq-content h3::after {
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 0.35em;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--green-800);
+  border-bottom: 2px solid var(--green-800);
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+
+/* Closed state */
+.coconet-faq .faq-content p {
+  display: block;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin: 0;
+  transform: translateY(-5px);
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    transform 0.3s ease,
+    margin 0.3s ease;
+}
+
+/* Open state controlled by JavaScript */
+.coconet-faq .faq-card.is-open .faq-content p {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 12px;
+  transform: translateY(0);
+}
+
+/* Arrow points down when closed */
+.coconet-faq .faq-content h3::after {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+/* Arrow points up when open */
+.coconet-faq .faq-card.is-open .faq-content h3::after {
+  transform: rotate(225deg);
+}
+
+/* Mobile: one independent column */
+@media (max-width: 760px) {
+  .coconet-faq .faq-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+
+
+/* Fix FAQ eyebrow icon alignment */
+.coconet-faq .section-eyebrow.faq-eyebrow {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.coconet-faq .faq-eyebrow .faq-eyebrow-icon {
+  display: block !important;
+  position: static !important;
+  flex: 0 0 12px;
+  width: 14px;
+  height: 14px;
+  margin: 0 !important;
+  
+}
+
+.coconet-faq .faq-eyebrow span {
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 14px !important;
+}
+
+/* FAQ heading icon: light mode */
+.coconet-faq .faq-eyebrow-icon {
+  color: #006C49;
+}
+
+/* FAQ heading icon: dark mode */
+:root[data-theme="dark"] .coconet-faq .faq-eyebrow-icon {
+  color: #63e6b0;
+}
+
+
+
+:root[data-theme="dark"] .coconet-faq .faq-contact-icon {
+  background: #1b3027;
+  color: #63e6b0;
+  border: 1px solid #63e6af60;
+}
+
 /* End Anupama Styles */
+
+
+
+
+
+
+
 
 
 

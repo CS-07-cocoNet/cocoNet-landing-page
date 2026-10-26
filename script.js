@@ -161,6 +161,57 @@
 
 // Anupama Script 
 
+
+
+document.querySelectorAll(".coconet-faq .faq-card").forEach((card) => {
+  const question = card.querySelector("h3");
+
+  if (!question) return;
+
+  question.setAttribute("tabindex", "0");
+  question.setAttribute("role", "button");
+  question.setAttribute("aria-expanded", "false");
+
+  const isMobile = () => window.matchMedia("(hover: none)").matches;
+
+  function setOpen(open) {
+    card.classList.toggle("is-open", open);
+    question.setAttribute("aria-expanded", String(open));
+  }
+
+  // Desktop: hover opens, leaving closes.
+  card.addEventListener("mouseenter", () => {
+    if (!isMobile()) setOpen(true);
+  });
+
+  card.addEventListener("mouseleave", () => {
+    if (!isMobile()) setOpen(false);
+  });
+
+  // Mobile: tap toggles open/closed.
+  question.addEventListener("click", () => {
+    if (isMobile()) {
+      setOpen(!card.classList.contains("is-open"));
+    }
+    // Desktop click intentionally does nothing.
+  });
+
+  // Keyboard support
+  question.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+
+      if (isMobile()) {
+        setOpen(!card.classList.contains("is-open"));
+      } else {
+        // Desktop keyboard can toggle the answer.
+        setOpen(!card.classList.contains("is-open"));
+      }
+    }
+  });
+});
+
+
 // End Anupama Script 
 
 
