@@ -340,7 +340,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid #8bc9ac; outline-offs
 }
 
 [data-theme="dark"] .brand-text span {
-  color: #087a4a;
+  color: #4cb985;
 }
 
 
@@ -1324,6 +1324,355 @@ button:focus-visible, a:focus-visible { outline: 3px solid #8bc9ac; outline-offs
 
 
 
+/* ===== cocoNet FAQ Section ===== */
+
+.coconet-faq {
+  padding: 90px 0;
+  background: var(--page);
+}
+
+.coconet-faq .faq-heading {
+  max-width: 800px;
+  margin: 0 auto 46px;
+  text-align: center;
+}
+
+.coconet-faq .faq-heading .section-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: var(--green-100);
+  color: var(--green-800);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+.coconet-faq .faq-heading h2 {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: clamp(28px, 3.5vw, 50px);
+  line-height: 1.2;
+}
+
+.coconet-faq .faq-intro {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.coconet-faq .faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.coconet-faq .faq-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 26px 24px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.coconet-faq .faq-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--green-700);
+}
+
+.coconet-faq .faq-icon {
+  display: flex;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--green-100);
+  color: var(--green-800);
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.coconet-faq .faq-content {
+  min-width: 0;
+}
+
+.coconet-faq .faq-content h3 {
+  margin: 3px 0 12px;
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.coconet-faq .faq-content p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.coconet-faq .faq-contact {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 44px;
+  padding: 28px 32px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--surface-strong);
+  box-shadow: var(--shadow);
+}
+
+.coconet-faq .faq-contact-icon {
+  display: flex;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: var(--green-800);
+  color: #fff;
+  font-size: 23px;
+}
+
+.coconet-faq .faq-contact-text {
+  flex: 1;
+}
+
+.coconet-faq .faq-contact-text h3 {
+  margin: 0 0 5px;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.coconet-faq .faq-contact-text p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.coconet-faq .faq-contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 9px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.coconet-faq .faq-contact-button:hover {
+  background: var(--button-bg-hover);
+  transform: translateY(-2px);
+}
+
+.coconet-faq .faq-contact-button:focus-visible {
+  outline: 3px solid var(--green-700);
+  outline-offset: 4px;
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 760px) {
+  .coconet-faq {
+    padding: 65px 0;
+  }
+
+  .coconet-faq .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .coconet-faq .faq-heading {
+    margin-bottom: 32px;
+  }
+
+  .coconet-faq .faq-card {
+    padding: 22px 18px;
+  }
+
+  .coconet-faq .faq-contact {
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+    padding: 22px;
+  }
+
+  .coconet-faq .faq-contact-text {
+    flex-basis: calc(100% - 65px);
+  }
+
+  .coconet-faq .faq-contact-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+
+
+
+
+
+/* Independent columns: neighbouring cards never stretch */
+.coconet-faq .faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 22px;
+}
+
+.coconet-faq .faq-column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 22px;
+  min-width: 0;
+}
+
+.coconet-faq .faq-card {
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+  height: auto;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Question and arrow */
+.coconet-faq .faq-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.coconet-faq .faq-content h3 {
+  position: relative;
+  padding-right: 25px;
+  cursor: pointer;
+}
+
+.coconet-faq .faq-content h3::after {
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 0.35em;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--green-800);
+  border-bottom: 2px solid var(--green-800);
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+
+/* Closed state */
+.coconet-faq .faq-content p {
+  display: block;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin: 0;
+  transform: translateY(-5px);
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    transform 0.3s ease,
+    margin 0.3s ease;
+}
+
+/* Open state controlled by JavaScript */
+.coconet-faq .faq-card.is-open .faq-content p {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 12px;
+  transform: translateY(0);
+}
+
+/* Arrow points down when closed */
+.coconet-faq .faq-content h3::after {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+/* Arrow points up when open */
+.coconet-faq .faq-card.is-open .faq-content h3::after {
+  transform: rotate(225deg);
+}
+
+/* Mobile: one independent column */
+@media (max-width: 760px) {
+  .coconet-faq .faq-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+
+
+/* Fix FAQ eyebrow icon alignment */
+.coconet-faq .section-eyebrow.faq-eyebrow {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.coconet-faq .faq-eyebrow .faq-eyebrow-icon {
+  display: block !important;
+  position: static !important;
+  flex: 0 0 12px;
+  width: 14px;
+  height: 14px;
+  margin: 0 !important;
+  
+}
+
+.coconet-faq .faq-eyebrow span {
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 14px !important;
+}
+
+/* FAQ heading icon: light mode */
+.coconet-faq .faq-eyebrow-icon {
+  color: #006C49;
+}
+
+/* FAQ heading icon: dark mode */
+:root[data-theme="dark"] .coconet-faq .faq-eyebrow-icon {
+  color: #63e6b0;
+}
+
+
+
+:root[data-theme="dark"] .coconet-faq .faq-contact-icon {
+  background: #1b3027;
+  color: #63e6b0;
+  border: 1px solid #63e6af60;
+}
 
 /* End Anupama Styles */
 
