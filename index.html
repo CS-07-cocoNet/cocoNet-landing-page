@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <!-- Keeps the layout at the real device width on phones and tablets. Do not remove. -->
@@ -11,19 +12,26 @@
   <meta name="description" content="cocoNet: practical digital support for coconut-growing communities.">
   <title>cocoNet | Landing Page</title>
 
+
+  <link rel="icon" href="./images/favicon.png?v=2" type="image/png">
+
   <!-- Optional web fonts. If offline, the system-font fallbacks in style.css will be used. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
 
   <!-- Global stylesheet: colors, typography, spacing, responsive layout, navigation and footer. -->
   <link rel="stylesheet" href="style.css">
-  
+
 
   <!-- defer waits until HTML parsing is complete before running the menu/theme JavaScript. -->
   <script src="script.js" defer></script>
-  
+
 </head>
+
 <body>
   <!-- ACCESSIBILITY: keyboard users can skip repeated navigation and jump to page content. -->
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -40,8 +48,8 @@
       <a class="brand" href="#" aria-label="cocoNet home"><span class="brand-text">coco<span>Net</span></span></a>
 
       <!-- MOBILE MENU BUTTON: visible on smaller screens. JS toggles aria-expanded and .is-open. -->
-      <button class="menu-toggle" type="button" aria-label="Open navigation menu"
-              aria-expanded="false" aria-controls="primary-navigation">
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
+        aria-controls="primary-navigation">
         <span></span><span></span><span></span>
       </button>
 
@@ -64,7 +72,9 @@
       <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle dark mode">
         <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r="4"></circle>
-          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+          <path
+            d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42">
+          </path>
         </svg>
         <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.7 8.7 0 1 0 20.5 14.2Z"></path>
@@ -100,13 +110,179 @@
          Keep id="overview" so the navigation link continues to work. -->
   
     
-    <section id="overview" class="content-section">
-      <div class="section-container">
+    
+<section id="overview" class="content-section coconet-overview">
+
+  <!-- Project alert -->
+  <div class="overview-alert">
+    <div class="overview-alert-message">
+      <span class="overview-alert-dot"></span>
+      <strong>COCONET</strong>
+      <span>Smarter digital support for coconut farming communities.</span>
+    </div>
+    <a href="#disease-detection" class="overview-alert-link">
+      Explore Disease Detection &rarr;
+    </a>
+  </div>
+
+  <!-- Main introduction -->
+  <div class="section-container">
+    <div class="overview-hero">
+
+      <div class="overview-content">
         <p class="section-eyebrow">ABOUT COCONET</p>
-        <h1>Your overview heading goes here</h1>
-        <p>Introduce the project, its target users, and the problem it aims to address.</p>
+
+        <div class="overview-badge">
+          <span class="overview-badge-dot"></span>
+          Technology for Healthier Coconut Palms
+        </div>
+
+        <h1>
+          Smarter Coconut Farming with
+          <span class="overview-highlight">AI-Powered Insights</span>
+        </h1>
+
+        <p class="overview-description">
+          cocoNet aims to help coconut farmers identify potential diseases
+          and access useful agricultural information through digital
+          technology, supporting earlier awareness and better-informed
+          farming decisions.
+        </p>
+
+        <div class="overview-actions">
+          <a href="#disease-detection"
+             class="overview-button overview-button-primary">
+            Explore Disease Detection <span aria-hidden="true">&rarr;</span>
+          </a>
+
+          <a href="#how-it-works"
+             class="overview-button overview-button-secondary">
+            How It Works <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+
+        <div class="overview-benefits">
+          <span><span aria-hidden="true">✓</span> Disease Awareness</span>
+          <span><span aria-hidden="true">✓</span> Farmer-Focused Tools</span>
+          <span><span aria-hidden="true">✓</span> Digital Farming Support</span>
+        </div>
       </div>
-    </section>
+
+      <!-- Visual panel -->
+      
+      <!-- Overview 3D phone visual -->
+      
+      
+      <div class="overview-visual">
+
+        <div class="overview-phone" tabindex="0"
+            aria-label="Interactive cocoNet disease scanner">
+
+          <div class="overview-phone-screen">
+
+            <div class="overview-device-bar">
+              <div class="overview-device-status">
+                <span class="overview-device-dot"></span>
+                <strong>TENSOR-FLOW EDGE<br>v4.2</strong>
+              </div>
+              <div class="overview-device-gps">
+                GPS: 8.4832° N,<br>124.6543° E
+              </div>
+            </div>
+
+            <div class="overview-leaf-photo">
+              <!-- Use a close-up photograph of diseased coconut fronds -->
+              <img src="images/coconut-disease-leaf.jpg"
+                  alt="Coconut leaf with visible disease lesions">
+
+              <div class="overview-detection-box">
+                <!-- <div class="overview-detection-label">
+                  <strong>LESION CLUSTER<br>#04</strong>
+                </div> -->
+                <span class="overview-detection-confidence">
+                  CONF:<br>90.4%
+                </span>
+                <span class="overview-detection-area">AREA: 42.1 cm²</span>
+                <span class="overview-detection-target">◎</span>
+              </div>
+
+              <div class="overview-result-card">
+                <div class="overview-result-meta">
+                  <strong>MODERATE SEVERITY</strong>
+                  <span>90.4% Confidence</span>
+                </div>
+
+                <h2>Grey Leaf Blight</h2>
+                <em>Pestalotiopsis palmarum</em>
+
+                <!-- <div class="overview-result-details">
+                  <span>Frond Tissue Necrosis: 42%</span>
+                  <strong>Bio-Copper 2.5g/L<br>Prescribed</strong>
+                </div> -->
+
+                <div class="overview-result-ring">
+                  <span>90.4%</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Original floating card 1 -->
+        <div class="overview-floating-card overview-floating-top">
+          <span class="overview-floating-icon" aria-hidden="true">⌕</span>
+          <div>
+            <small>DISEASE SUPPORT</small>
+            <strong>Early Identification</strong>
+          </div>
+        </div>
+
+        <!-- Original floating card 2 -->
+        <div class="overview-floating-card overview-floating-bottom">
+          <span class="overview-floating-icon" aria-hidden="true">♧</span>
+          <div>
+            <small>OUR PURPOSE</small>
+            <strong>Healthier Coconut Palms</strong>
+          </div>
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <!-- Project highlights -->
+  <div class="overview-highlights">
+    <div class="overview-highlight-item">
+      <span class="overview-highlight-number">20.3B</span>
+      <strong>India's Coconut Production</strong>
+      <p>India produced approximately 20.3 billion coconuts in 2024–25, making it a major market for farmer-focused agricultural technology.</p>
+    </div>
+
+    <div class="overview-highlight-item">
+      <span class="overview-highlight-number">2.79B</span>
+      <strong>Sri Lanka's Coconut Production</strong>
+      <p>Sri Lanka produced around 2.79 billion coconuts in 2024, highlighting the importance of protecting coconut cultivation and supporting growers.</p>
+    </div>
+
+    <div class="overview-highlight-item">
+      <span class="overview-highlight-number">15+</span>
+      <strong>South Asian Countries</strong>
+      <p>cocoNet aims to support South Asian farmers with localized disease identification and practical farming guidance.</p>
+    </div>
+
+    <div class="overview-highlight-item">
+      <span class="overview-highlight-number">1 Platform</span>
+      <strong>Connected Farmer Support</strong>
+      <p>Our long-term vision is to bring disease identification support and practical coconut cultivation guidance together in one accessible digital platform.</p>
+    </div>
+  </div>
+
+</section>
+
    
     <!-- SECTION END: OVERVIEW -->
 
@@ -118,15 +294,195 @@
 
     <!-- SECTION START: HOW IT WORKS   -- Janith
          Add the workflow, process steps, or system diagram in this section. -->
-    
+
     <section id="how-it-works" class="content-section">
-      <div class="section-container">
-        <p class="section-eyebrow">HOW IT WORKS</p>
-        <h2>Explain the process</h2>
-        <p>Describe the main steps a farmer or other user follows.</p>
+    
+      <div class="section-container hiw-container">
+        <!-- Section Header -->
+        <div class="head">
+          <div class="head-in">
+            <div class="eyebrow">How cocoNet Works</div>
+            <h2>From a Leaf Photo to a Nationwide Disease Map</h2>
+            <p class="lead">Upload a coconut leaf photo and CocoGuard detects WCWLD and CCI, then shares every result in one central database that farmers and authorities can both see.</p>
+          </div>
+        </div>
+
+        <!-- Dynamic Showcase Layout -->
+        <div class="showcase">
+          <!-- Flow Line SVG (Drawn and animated by script.js) -->
+          <svg class="flow" id="flow" aria-hidden="true">
+            <defs>
+              <filter id="blur" filterUnits="userSpaceOnUse" x="-200" y="-200" width="4000" height="4000">
+                <feGaussianBlur stdDeviation="4" />
+              </filter>
+            </defs>
+          </svg>
+
+          <!-- Left Column: Steps 01 & 02 -->
+          <div class="col left">
+            <article class="step">
+              <div class="step-top">
+                <div class="num">01</div>
+                <div class="pill"><i></i>Any Phone</div>
+              </div>
+              <div class="text">
+                <h3>Snap or Upload a Leaf</h3>
+                <p>Farmers photograph a coconut leaflet, upper surface for wilt and lower surface for caterpillars, or upload one from the gallery.</p>
+              </div>
+              <div class="spec">
+                <span class="l">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#006C49" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 8h3l2-3h6l2 3h3v11H4z" />
+                    <circle cx="12" cy="13" r="3.5" />
+                  </svg>
+                  Leaf Photo
+                </span>
+                <span class="tag">JPEG • Camera or Gallery</span>
+              </div>
+            </article>
+
+            <article class="step">
+              <div class="step-top">
+                <div class="num">02</div>
+                <div class="pill alt"><i></i>Deep Learning</div>
+              </div>
+              <div class="text">
+                <h3>AI Detects WCWLD &amp; CCI</h3>
+                <p>Transfer-learning CNNs classify wilt and grade its severity, while Mask R-CNN and YOLO measure caterpillar damage and count larvae.</p>
+              </div>
+              <div class="spec">
+                <span class="l" style="color: #004328;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#004328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="6" y="6" width="12" height="12" rx="2" />
+                    <path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4" />
+                  </svg>
+                  WCWLD · CCI
+                </span>
+                <span class="r" style="color: #006C49;">Severity + Count</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- Center Column: Interactive Phone Mockup -->
+          <div class="col center">
+            <div class="phone" aria-label="CocoGuard Mobile app preview">
+              <div class="notch"><b></b><u></u></div>
+              <div class="screen">
+                <div class="scan" id="scan"></div>
+
+                <div class="hud">
+                  <div class="target">
+                    <div class="trow">
+                      <span class="lesion">Flaccidity</span>
+                      <span class="ov">CONF 0.94</span>
+                    </div>
+                    <div class="cross"><i></i></div>
+                    <div class="trow">
+                      <span class="ov w">Upper surface</span>
+                      <span class="match">WCWLD MATCH</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="status">
+                  <div class="sb">
+                    <b>09:41</b>
+                    <span>
+                      <svg width="12" height="10" viewBox="0 0 24 20" fill="none" stroke="#6FFBBE" stroke-width="3" stroke-linecap="round">
+                        <path d="M2 7c6-6 14-6 20 0M6 11.5c4-4 8-4 12 0M10 16c1.2-1.2 2.8-1.2 4 0" />
+                      </svg>
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="#fff"><path d="M10 0v10H0z" /></svg>
+                      <svg width="7" height="10" viewBox="0 0 7 10" fill="#fff"><rect x="1" y="0" width="5" height="10" rx="1.2" /></svg>
+                    </span>
+                  </div>
+                  <div class="nav">
+                    <div class="brand"><span class="logo">C</span>cocoNet</div>
+                    <span class="mode">Leaf Scan Mode</span>
+                  </div>
+                </div>
+
+                <div class="drawer">
+                  <div class="grab"></div>
+                  <div class="inf">
+                    <span class="a"><i></i>Early Stage Detected</span>
+                    <span class="c">94% Confidence</span>
+                  </div>
+                  <div class="dx">
+                    <div>
+                      <h4>Leaf Wilt (WCWLD)</h4>
+                      <em>Weligama Coconut Leaf Wilt</em>
+                    </div>
+                    <div class="rt">
+                      <b>Mild Severity</b>
+                      <code>Flaccidity only</code>
+                    </div>
+                  </div>
+                  <div class="act">
+                    <button class="rx" type="button">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 16V5M7 10l5-5 5 5M5 20h14" />
+                      </svg>
+                      Sync to National Database
+                    </button>
+                    <button class="sc" type="button" aria-label="Scan again">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#006C49" stroke-width="2.4" stroke-linecap="round">
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M3 8V4h4M21 8V4h-4M3 16v4h4M21 16v4h-4" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="dots"><i></i><i></i><i></i><i></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Steps 03 & 04 -->
+          <div class="col right">
+            <article class="step">
+              <div class="step-top">
+                <div class="num">03</div>
+                <div class="pill"><i></i>Cloud Sync</div>
+              </div>
+              <div class="text">
+                <h3>Central National Database</h3>
+                <p>Each diagnosis is saved with its location, date, disease and severity, building one shared and always-current record of coconut health.</p>
+              </div>
+              <div class="spec">
+                <span class="l">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#006C49" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <ellipse cx="12" cy="5" rx="8" ry="3" />
+                    <path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" />
+                  </svg>
+                  Geotagged Records
+                </span>
+                <span class="r" style="color: #004328;">Live Sync</span>
+              </div>
+            </article>
+
+            <article class="step">
+              <div class="step-top">
+                <div class="num">04</div>
+                <div class="pill alt"><i></i>Open Access</div>
+              </div>
+              <div class="text">
+                <h3>Shared Visibility</h3>
+                <p>Authorities monitor hotspots and plan containment, while farmers see their own results and nearby cases from the same database.</p>
+              </div>
+              <div class="spec">
+                <span class="l">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#006C49" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 21h18M5 21V10M9 21V10M15 21V10M19 21V10M2 10l10-6 10 6z" />
+                  </svg>
+                  Gov Dashboard
+                </span>
+                <span class="r" style="color: #707971;">Farmer View</span>
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
-   
     <!-- SECTION END: HOW IT WORKS -->
 
 
@@ -138,7 +494,7 @@
     <!-- SECTION START: DISEASE DETECTION feature explanation   -- Janani
          Add the feature explanation, scan/upload flow, supported conditions, or demo here.
          Only make claims that your project can support and demonstrate. -->
-    
+
     <section id="disease-detection" class="content-section">
       <div class="section-container">
         <p class="section-eyebrow">DISEASE DETECTION</p>
@@ -146,7 +502,7 @@
         <p>Explain the intended workflow and current prototype capabilities.</p>
       </div>
     </section>
-   
+
     <!-- SECTION END: DISEASE DETECTION -->
 
 
@@ -157,8 +513,8 @@
     <!-- SECTION START: FARMER STORIES -- Sudil
          Add verified interview findings, farmer quotes with permission, or case studies here.
          Do not invent testimonials or present fictional quotes as real feedback. -->
-    
-        <section id="farmer-stories" class="content-section">
+
+    <section id="farmer-stories" class="content-section">
       <div class="section-container">
         <p class="section-eyebrow">FARMER STORIES</p>
         <h2>Insights from the farming community</h2>
@@ -317,7 +673,7 @@
         <p class="fs-note">The stories above are illustrative demo content created for layout review, written against the interview guide in the cocoNet project proposal (farmer, agricultural officer and researcher personas). They will be replaced with validated, permission-cleared interview findings and cited sources before release.</p>
       </div>
     </section>
-   
+
     <!-- SECTION END: FARMER STORIES -->
 
 
@@ -329,7 +685,7 @@
 
     <!-- SECTION START: MEET THE TEAM -- Isindu 
          Add your five team members, roles, short bios, and approved profile images here. -->
-    
+
     <section id="team" class="content-section">
       <div class="section-container">
         <p class="section-eyebrow">OUR TEAM</p>
@@ -337,26 +693,170 @@
         <p>Introduce each team member and their contribution.</p>
       </div>
     </section>
-   
+
     <!-- SECTION END: MEET THE TEAM -->
 
 
 
 
-    
+
 
     <!-- SECTION START: FAQ   -- Anupama 
          The header CTA points here. If you do not need this section, change the CTA href. -->
     
-    <section id="faq" class="content-section">
+    
+    <section id="faq" class="content-section coconet-faq">
+
+      
+
       <div class="section-container">
-        <p class="section-eyebrow">GET INVOLVED</p>
-        <h2>Frequently Asked Questions</h2>
-        <p>Add your approved contact details or an early-access form.</p>
+
+        <div class="faq-heading">
+          
+
+          <p class="section-eyebrow faq-eyebrow">
+            <svg
+              class="faq-eyebrow-icon"
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              
+              
+              
+            >
+              <path
+                fill="currentColor"
+                d="M6.63333 10.6667C6.86667 10.6667 7.06389 10.5861 7.225 10.425C7.38611 10.2639 7.46667 10.0667 7.46667 9.83333C7.46667 9.6 7.38611 9.40278 7.225 9.24167C7.06389 9.08056 6.86667 9 6.63333 9C6.4 9 6.20278 9.08056 6.04167 9.24167C5.88056 9.40278 5.8 9.6 5.8 9.83333C5.8 10.0667 5.88056 10.2639 6.04167 10.425C6.20278 10.5861 6.4 10.6667 6.63333 10.6667V10.6667M6.03333 8.1H7.26667C7.26667 7.73333 7.30833 7.44444 7.39167 7.23333C7.475 7.02222 7.71111 6.73333 8.1 6.36667C8.38889 6.07778 8.61667 5.80278 8.78333 5.54167C8.95 5.28056 9.03333 4.96667 9.03333 4.6C9.03333 3.97778 8.80556 3.5 8.35 3.16667C7.89444 2.83333 7.35556 2.66667 6.73333 2.66667C6.1 2.66667 5.58611 2.83333 5.19167 3.16667C4.79722 3.5 4.52222 3.9 4.36667 4.36667L5.46667 4.8C5.52222 4.6 5.64722 4.38333 5.84167 4.15C6.03611 3.91667 6.33333 3.8 6.73333 3.8C7.08889 3.8 7.35556 3.89722 7.53333 4.09167C7.71111 4.28611 7.8 4.5 7.8 4.73333C7.8 4.95556 7.73333 5.16389 7.6 5.35833C7.46667 5.55278 7.3 5.73333 7.1 5.9C6.61111 6.33333 6.31111 6.66111 6.2 6.88333C6.08889 7.10556 6.03333 7.51111 6.03333 8.1V8.1M6.66667 13.3333C2.98477 13.3333 0 10.3486 0 6.66667C0 2.98477 2.98477 0 6.66667 0C10.3486 0 13.3333 2.98477 13.3333 6.66667C13.3333 10.3486 10.3486 13.3333 6.66667 13.3333ZM6.66667 12C9.61219 12 12 9.61219 12 6.66667C12 3.72115 9.61219 1.33333 6.66667 1.33333C3.72115 1.33333 1.33333 3.72115 1.33333 6.66667C1.33333 9.61219 3.72115 12 6.66667 12Z"
+                fill="#006C49"
+              />
+            </svg>
+            
+
+            <span> FREQUENTLY ASKED QUESTIONS</span>
+          </p>
+
+
+          <h2 class="faq-title">
+            Have Questions? We've Got Answers.
+          </h2>
+          <p class="faq-intro">
+           Find out how cocoNet supports coconut farmers with AI-assisted disease identification and practical cultivation guidance.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+
+          <div class="faq-column">
+
+            <article class="faq-card">
+              <div class="faq-icon" aria-hidden="true">🔎︎</div>
+              <div class="faq-content">
+                <h3>What is cocoNet?</h3>
+                <p>
+                  cocoNet is a digital platform designed to help coconut
+                  farmers identify potential diseases and access useful
+                  cultivation information in one place.
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-card">
+              <div class="faq-icon" aria-hidden="true">⛯</div>
+              <div class="faq-content">
+                <h3>How does disease identification work?</h3>
+                <p>
+                  Farmers can upload a photograph of an affected coconut
+                  leaf for AI-assisted analysis. The system is intended
+                  to identify possible diseases and provide helpful
+                  information for further investigation.
+                </p>
+              </div>
+            </article>
+
+          
+
+            <article class="faq-card">
+              <div class="faq-icon" aria-hidden="true">⸙</div>
+              <div class="faq-content">
+                <h3>Which coconut diseases will cocoNet support?</h3>
+                <p>
+                  The project will focus on selected coconut diseases
+                  based on available datasets, expert guidance, and
+                  the diseases your team can reliably train and evaluate
+                  the model to recognise.
+                </p>
+              </div>
+            </article>
+
+          </div>
+          
+          
+          <div class="faq-column">
+
+            <article class="faq-card">
+              <div class="faq-icon" aria-hidden="true">シ</div>
+              <div class="faq-content">
+                <h3>Who can use cocoNet?</h3>
+                <p>
+                  The platform is being designed primarily for coconut
+                  farmers, with the goal of making relevant disease
+                  information and cultivation guidance easier to access.
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-card">
+              <div class="faq-icon" aria-hidden="true">⌘</div>
+              <div class="faq-content">
+                <h3>Will cocoNet support farmers across South Asia?</h3>
+                <p>
+                  Our wider vision is to extend support to coconut-growing
+                  communities across South Asia, with local languages,
+                  disease data, and agricultural guidance adapted to
+                  each region.
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-card">
+              <div class="faq-icon" aria-hidden="true">⤬</div>
+              <div class="faq-content">
+                <h3>Can cocoNet replace agricultural experts?</h3>
+                <p>
+                  No. cocoNet is intended to provide preliminary
+                  identification support and useful information.
+                  Farmers should consult qualified agricultural experts
+                  for confirmation and treatment decisions.
+                </p>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+
+        <div class="faq-contact">
+          <div class="faq-contact-icon" aria-hidden="true">✉</div>
+
+          <div class="faq-contact-text">
+            <h3>Still have questions about cocoNet?</h3>
+            <p>
+              Get in touch with our team to learn more about the project.
+            </p>
+          </div>
+
+          <a class="faq-contact-button" href="#contact">
+            Contact Our Team <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
       </div>
     </section>
-   
-  
+
+
     <!-- SECTION END: FAQ -->
 
 
@@ -366,7 +866,7 @@
 
     <!-- SECTION START: EARLY ACCESS / CONTACT   -- Isindu
          The header CTA points here. If you do not need this section, change the CTA href. -->
-    
+
     <section id="early-access" class="content-section">
       <div class="section-container">
         <p class="section-eyebrow">GET INVOLVED</p>
@@ -374,8 +874,8 @@
         <p>Add your approved contact details or an early-access form.</p>
       </div>
     </section>
-   
-  
+
+
     <!-- SECTION END: EARLY ACCESS -->
 
 
@@ -393,8 +893,10 @@
     <div class="footer-main">
       <!-- FOOTER BRAND: short, accurate description of the project. -->
       <div class="footer-brand-column">
-        <a class="brand footer-brand" href="#" aria-label="cocoNet home"><span class="brand-text">coco<span>Net</span></span></a>
-        <p class="footer-description">Practical digital support for coconut farmers, helping communities make more informed decisions about palm health.</p>
+        <a class="brand footer-brand" href="#" aria-label="cocoNet home"><span
+            class="brand-text">coco<span>Net</span></span></a>
+        <p class="footer-description">Practical digital support for coconut farmers, helping communities make more
+          informed decisions about palm health.</p>
         <span class="status-pill"><span class="status-dot"></span> Growing a healthier coconut future</span>
       </div>
 
@@ -438,4 +940,5 @@
     </div>
   </footer>
 </body>
+
 </html>
