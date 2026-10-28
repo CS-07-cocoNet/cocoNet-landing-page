@@ -519,10 +519,164 @@
         <p class="section-eyebrow">FARMER STORIES</p>
         <h2>Insights from the farming community</h2>
         <p>Summarise real research or interview findings and identify the source where appropriate.</p>
+
+        <!-- Farmer Stories slider (Sudil). All styles live in the "Sudil Styles"
+             block of style.css; behaviour lives in the "Sudil Script" block of script.js.
+             Portrait images live in /images next to this file.
+             NOTE: cards are clearly flagged "Demo" until validated, permission-cleared
+             interview findings replace them. -->
+        <div class="fs-slider" data-fs-slider>
+
+          <!-- toolbar: story counter + arrow buttons -->
+          <div class="fs-toolbar">
+            <p class="fs-counter"><span class="fs-counter-current">01</span><span class="fs-counter-total"> / 06</span></p>
+            <div class="fs-arrows">
+              <button class="fs-arrow fs-arrow--prev" type="button" aria-label="Previous story">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+              </button>
+              <button class="fs-arrow fs-arrow--next" type="button" aria-label="Next story">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- side-by-side track: 3 cards on desktop, 2 on tablet, 1 on phones -->
+          <div class="fs-viewport" data-fs-viewport tabindex="0" role="group"
+               aria-label="Farmer story cards — drag, swipe or use the arrow buttons to browse">
+            <ul class="fs-track" data-fs-track>
+
+              <!-- Story 01 -->
+              <li class="fs-story" style="--fs-i: 0">
+                <article class="fs-card">
+                  <div class="fs-card-top">
+                    <span class="fs-tag">Rhinoceros beetle</span>
+                    <span class="fs-demo-flag" title="Illustrative demo story — will be replaced with validated interview findings">Demo</span>
+                  </div>
+                  <span class="fs-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</span>
+                  <blockquote class="fs-quote">“By the time I spotted the V-shaped cuts in the crowns, the beetle had already damaged six young fronds on my best palms. I still copy whatever the neighbours use, because nobody has shown me what actually works.”</blockquote>
+                  <p class="fs-help"><svg class="fs-help-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-8"></path><path d="M12 13c0-4.2 3-7.2 8-7.2 0 4.2-3 7.2-8 7.2z"></path><path d="M12 13c0-3.2-2.6-5.2-6-5.2 0 3.2 2.6 5.2 6 5.2z"></path></svg><span><strong>How cocoNet helps:</strong> photo-based pest identification flags crown damage early and returns verified management steps the same day.</span></p>
+                  <footer class="fs-person">
+                    <img class="fs-avatar" src="images/fs-sunil.jpg" alt="Demo portrait of Sunil Jayasuriya" width="104" height="104" loading="lazy">
+                    <div class="fs-person-text">
+                      <span class="fs-name">Sunil Jayasuriya<span class="fs-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"></path></svg></span></span>
+                      <span class="fs-role">Smallholder farmer · Kuliyapitiya, Kurunegala</span>
+                    </div>
+                  </footer>
+                </article>
+              </li>
+
+              <!-- Story 02 -->
+              <li class="fs-story" style="--fs-i: 1">
+                <article class="fs-card">
+                  <div class="fs-card-top">
+                    <span class="fs-tag">Grey leaf blight</span>
+                    <span class="fs-demo-flag" title="Illustrative demo story — will be replaced with validated interview findings">Demo</span>
+                  </div>
+                  <span class="fs-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</span>
+                  <blockquote class="fs-quote">“Grey leaf blight spreads fast during the inter-monsoon, and from the ground it looks almost like drought stress. Last year I sprayed copper across the whole block without knowing if it was right.”</blockquote>
+                  <p class="fs-help"><svg class="fs-help-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-8"></path><path d="M12 13c0-4.2 3-7.2 8-7.2 0 4.2-3 7.2-8 7.2z"></path><path d="M12 13c0-3.2-2.6-5.2-6-5.2 0 3.2 2.6 5.2 6 5.2z"></path></svg><span><strong>How cocoNet helps:</strong> percentage-scored predictions show what the model sees and how confident it is, with targeted guidance instead of blanket spraying.</span></p>
+                  <footer class="fs-person">
+                    <img class="fs-avatar" src="images/fs-nuwan.jpg" alt="Demo portrait of Nuwan Bandara" width="104" height="104" loading="lazy">
+                    <div class="fs-person-text">
+                      <span class="fs-name">Nuwan Bandara<span class="fs-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"></path></svg></span></span>
+                      <span class="fs-role">Commercial farmer · Matale</span>
+                    </div>
+                  </footer>
+                </article>
+              </li>
+
+              <!-- Story 03 -->
+              <li class="fs-story" style="--fs-i: 2">
+                <article class="fs-card">
+                  <div class="fs-card-top">
+                    <span class="fs-tag">Black-headed caterpillar</span>
+                    <span class="fs-demo-flag" title="Illustrative demo story — will be replaced with validated interview findings">Demo</span>
+                  </div>
+                  <span class="fs-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</span>
+                  <blockquote class="fs-quote">“For almost two seasons the lower leaflets dried out and I thought it was just the dry weather. When the officer finally identified the black-headed caterpillar, the best time to treat it had already passed.”</blockquote>
+                  <p class="fs-help"><svg class="fs-help-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-8"></path><path d="M12 13c0-4.2 3-7.2 8-7.2 0 4.2-3 7.2-8 7.2z"></path><path d="M12 13c0-3.2-2.6-5.2-6-5.2 0 3.2 2.6 5.2 6 5.2z"></path></svg><span><strong>How cocoNet helps:</strong> leaf-level identification with confidence scores, plus a picture-based disease library that can be read in Sinhala or Tamil.</span></p>
+                  <footer class="fs-person">
+                    <img class="fs-avatar" src="images/fs-kamala.jpg" alt="Demo portrait of Kamala Wijekoon" width="104" height="104" loading="lazy">
+                    <div class="fs-person-text">
+                      <span class="fs-name">Kamala Wijekoon<span class="fs-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"></path></svg></span></span>
+                      <span class="fs-role">Smallholder farmer · Puttalam</span>
+                    </div>
+                  </footer>
+                </article>
+              </li>
+
+              <!-- Story 04 -->
+              <li class="fs-story" style="--fs-i: 3">
+                <article class="fs-card">
+                  <div class="fs-card-top">
+                    <span class="fs-tag">Bud rot &amp; wilt</span>
+                    <span class="fs-demo-flag" title="Illustrative demo story — will be replaced with validated interview findings">Demo</span>
+                  </div>
+                  <span class="fs-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</span>
+                  <blockquote class="fs-quote">“We lost more than forty palms to rot after the rains — the spindle collapses and by then there is nothing left to save. Reporting took weeks, so the neighbouring plots went down one after another.”</blockquote>
+                  <p class="fs-help"><svg class="fs-help-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-8"></path><path d="M12 13c0-4.2 3-7.2 8-7.2 0 4.2-3 7.2-8 7.2z"></path><path d="M12 13c0-3.2-2.6-5.2-6-5.2 0 3.2 2.6 5.2 6 5.2z"></path></svg><span><strong>How cocoNet helps:</strong> early detection with automatic observation recording speeds up reporting, and the district dashboard shows outbreaks forming sooner.</span></p>
+                  <footer class="fs-person">
+                    <img class="fs-avatar" src="images/fs-priyantha.jpg" alt="Demo portrait of Priyantha de Silva" width="104" height="104" loading="lazy">
+                    <div class="fs-person-text">
+                      <span class="fs-name">Priyantha de Silva<span class="fs-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"></path></svg></span></span>
+                      <span class="fs-role">Estate owner · Matara</span>
+                    </div>
+                  </footer>
+                </article>
+              </li>
+
+              <!-- Story 05 -->
+              <li class="fs-story" style="--fs-i: 4">
+                <article class="fs-card">
+                  <div class="fs-card-top">
+                    <span class="fs-tag fs-tag--system">Regional reporting</span>
+                    <span class="fs-demo-flag" title="Illustrative demo story — will be replaced with validated interview findings">Demo</span>
+                  </div>
+                  <span class="fs-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</span>
+                  <blockquote class="fs-quote">“Most disease reports still reach me by a phone call, sometimes two weeks after the first symptoms appear. I only see a pattern once three or four farmers call about the same thing.”</blockquote>
+                  <p class="fs-help"><svg class="fs-help-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-8"></path><path d="M12 13c0-4.2 3-7.2 8-7.2 0 4.2-3 7.2-8 7.2z"></path><path d="M12 13c0-3.2-2.6-5.2-6-5.2 0 3.2 2.6 5.2 6 5.2z"></path></svg><span><strong>How cocoNet helps:</strong> the web dashboard plots farmer-submitted observations by district, so officers can monitor disease patterns and plan inspections on evidence.</span></p>
+                  <footer class="fs-person">
+                    <img class="fs-avatar" src="images/fs-anoma.jpg" alt="Demo portrait of Anoma Rajapaksha" width="104" height="104" loading="lazy">
+                    <div class="fs-person-text">
+                      <span class="fs-name">Anoma Rajapaksha<span class="fs-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"></path></svg></span></span>
+                      <span class="fs-role">Agricultural Officer · Puttalam district</span>
+                    </div>
+                  </footer>
+                </article>
+              </li>
+
+              <!-- Story 06 -->
+              <li class="fs-story" style="--fs-i: 5">
+                <article class="fs-card">
+                  <div class="fs-card-top">
+                    <span class="fs-tag fs-tag--system">Research data</span>
+                    <span class="fs-demo-flag" title="Illustrative demo story — will be replaced with validated interview findings">Demo</span>
+                  </div>
+                  <span class="fs-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</span>
+                  <blockquote class="fs-quote">“Every study begins with hunting through scattered photos, notes and harvest books that were never recorded in a usable form. Without geotagged observations we cannot connect disease pressure to location or season.”</blockquote>
+                  <p class="fs-help"><svg class="fs-help-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-8"></path><path d="M12 13c0-4.2 3-7.2 8-7.2 0 4.2-3 7.2-8 7.2z"></path><path d="M12 13c0-3.2-2.6-5.2-6-5.2 0 3.2 2.6 5.2 6 5.2z"></path></svg><span><strong>How cocoNet helps:</strong> verified observations build a geotagged, filterable disease database that researchers can query and export for every future study.</span></p>
+                  <footer class="fs-person">
+                    <img class="fs-avatar" src="images/fs-chandana.jpg" alt="Demo portrait of Dr. Chandana Perera" width="104" height="104" loading="lazy">
+                    <div class="fs-person-text">
+                      <span class="fs-name">Dr. Chandana Perera<span class="fs-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"></path></svg></span></span>
+                      <span class="fs-role">Agricultural researcher · Coconut Research Institute</span>
+                    </div>
+                  </footer>
+                </article>
+              </li>
+
+            </ul>
+          </div>
+
+        </div>
+
+        <p class="fs-note">The stories above are illustrative demo content created for layout review, written against the interview guide in the cocoNet project proposal (farmer, agricultural officer and researcher personas). They will be replaced with validated, permission-cleared interview findings and cited sources before release.</p>
       </div>
     </section>
 
     <!-- SECTION END: FARMER STORIES -->
+
+
 
 
 
