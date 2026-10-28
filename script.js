@@ -184,7 +184,192 @@
 
 // Sudil Script 
 
+/* ===== SUDIL: Farmer Stories slider =====
+   1. Side-by-side slider: arrow buttons, mouse drag, touch swipe, counter.
+   2. Cursor-proximity motion: cards drift sideways away from a NEAR cursor
+      (no hover needed) with a soft green glow, then ease back to rest.
+   Only touches markup inside #farmer-stories. No libraries. */
+(() => {
+  "use strict";
+
+  const slider = document.querySelector("#farmer-stories [data-fs-slider]");
+  if (!slider) return;
+
+  const viewport = slider.querySelector("[data-fs-viewport]");
+  const track = slider.querySelector("[data-fs-track]");
+  const cards = Array.from(track ? track.children : []);
+  const prevBtn = slider.querySelector(".fs-arrow--prev");
+  const nextBtn = slider.querySelector(".fs-arrow--next");
+  const counterCurrent = slider.querySelector(".fs-counter-current");
+  const counterTotal = slider.querySelector(".fs-counter-total");
+  if (!viewport || !track || cards.length === 0) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+  if (counterTotal) counterTotal.textContent = " / " + String(cards.length).padStart(2, "0");
+
+  /* ---- 1. Entrance reveal (kept safe: cards stay visible without JS) ---- */
+  slider.classList.add("fs-armed");
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        slider.classList.add("fs-in");
+        revealObserver.disconnect();
+      }
+    }, { threshold: 0.12 });
+    revealObserver.observe(slider);
+  } else {
+    slider.classList.add("fs-in");
+  }
+
+  /* ---- 2. Slider: counter + arrows + drag-to-scroll ---- */
+  let step = 0;
+  let dragging = false;
+
+  function measure() {
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    step = cards[0].getBoundingClientRect().width + gap;
+  }
+
+  function maxScroll() { return viewport.scrollWidth - viewport.clientWidth; }
+
+  function currentIndex() {
+    if (step <= 0) return 0;
+    return Math.max(0, Math.min(Math.round(viewport.scrollLeft / step), Math.round(maxScroll() / step)));
+  }
+
+  function updateUI() {
+    if (counterCurrent) counterCurrent.textContent = String(currentIndex() + 1).padStart(2, "0");
+    if (prevBtn) prevBtn.disabled = viewport.scrollLeft <= 2;
+    if (nextBtn) nextBtn.disabled = viewport.scrollLeft >= maxScroll() - 2;
+  }
+
+  function goTo(index) {
+    const left = Math.max(0, Math.min(index * step, maxScroll()));
+    viewport.scrollTo({ left, behavior: reduceMotion.matches ? "auto" : "smooth" });
+  }
+
+  if (prevBtn) prevBtn.addEventListener("click", () => goTo(currentIndex() - 1));
+  if (nextBtn) nextBtn.addEventListener("click", () => goTo(currentIndex() + 1));
+  viewport.addEventListener("scroll", updateUI, { passive: true });
+  window.addEventListener("resize", () => { measure(); updateUI(); });
+  measure();
+  updateUI();
+
+  // Mouse drag-to-scroll (touch already scrolls natively).
+  let dragStartX = 0;
+  let dragStartScroll = 0;
+  let dragMoved = false;
+
+  viewport.addEventListener("pointerdown", (event) => {
+    if (event.pointerType === "touch" || maxScroll() <= 0) return;
+    dragging = true;
+    dragMoved = false;
+    dragStartX = event.clientX;
+    dragStartScroll = viewport.scrollLeft;
+    viewport.classList.add("is-dragging");
+  });
+
+  viewport.addEventListener("pointermove", (event) => {
+    if (!dragging) return;
+    const delta = event.clientX - dragStartX;
+    if (Math.abs(delta) > 5) dragMoved = true;
+    viewport.scrollLeft = dragStartScroll - delta;
+  });
+
+  function endDrag() {
+    if (!dragging) return;
+    dragging = false;
+    viewport.classList.remove("is-dragging");
+    goTo(currentIndex()); // settle on the nearest card
+  }
+  viewport.addEventListener("pointerup", endDrag);
+  viewport.addEventListener("pointercancel", endDrag);
+  viewport.addEventListener("pointerleave", endDrag);
+  viewport.addEventListener("click", (event) => {
+    if (dragMoved) { event.preventDefault(); dragMoved = false; }
+  }, true);
+
+  /* ---- 3. Cursor-proximity sideways motion ----
+     Within ~210px of a card's edge the card is gently pushed AWAY from the
+     cursor (sideways), lifts a few pixels and tilts in 3D. Strength follows
+     a smoothstep curve and everything is lerped in one rAF loop. */
+  const PROXIMITY_RADIUS = 210;
+  const MAX_SHIFT_X = 16;
+  const MAX_LIFT = 5;
+  const MAX_TILT = 2.4;
+  const EASE = 0.14;
+
+  const pointer = { x: 0, y: 0, active: false };
+  let rafId = null;
+  const cardState = cards.map(() => ({ x: 0, y: 0, ry: 0, glow: 0 }));
+
+  function magnetFrame() {
+    rafId = null;
+    let settled = true;
+
+    cards.forEach((card, i) => {
+      const state = cardState[i];
+      let tx = 0, ty = 0, tilt = 0, glow = 0;
+
+      if (pointer.active && finePointer.matches && !reduceMotion.matches && !dragging) {
+        const rect = card.getBoundingClientRect();
+        if (rect.bottom > -PROXIMITY_RADIUS && rect.top < window.innerHeight + PROXIMITY_RADIUS) {
+          const nx = Math.max(rect.left, Math.min(pointer.x, rect.right));
+          const ny = Math.max(rect.top, Math.min(pointer.y, rect.bottom));
+          const dist = Math.hypot(pointer.x - nx, pointer.y - ny);
+          if (dist < PROXIMITY_RADIUS) {
+            const t = 1 - dist / PROXIMITY_RADIUS;
+            const force = t * t * (3 - 2 * t); // smoothstep ease-in-out
+            const dir = pointer.x < rect.left + rect.width / 2 ? 1 : -1;
+            tx = dir * force * MAX_SHIFT_X;
+            ty = -force * MAX_LIFT;
+            tilt = dir * force * MAX_TILT;
+            glow = force;
+          }
+        }
+      }
+
+      state.x += (tx - state.x) * EASE;
+      state.y += (ty - state.y) * EASE;
+      state.ry += (tilt - state.ry) * EASE;
+      state.glow += (glow - state.glow) * EASE;
+
+      if (Math.abs(state.x) > 0.05 || Math.abs(state.y) > 0.05 ||
+          Math.abs(state.ry) > 0.03 || Math.abs(state.glow) > 0.01) {
+        settled = false;
+      } else {
+        state.x = state.y = state.ry = state.glow = 0;
+      }
+
+      card.style.setProperty("--fs-tx", state.x.toFixed(2) + "px");
+      card.style.setProperty("--fs-ty", state.y.toFixed(2) + "px");
+      card.style.setProperty("--fs-ry", state.ry.toFixed(3) + "deg");
+      card.style.setProperty("--fs-glow", state.glow.toFixed(3));
+    });
+
+    if (!settled) rafId = requestAnimationFrame(magnetFrame);
+  }
+
+  const section = document.getElementById("farmer-stories");
+  if (section) {
+    section.addEventListener("pointermove", (event) => {
+      pointer.x = event.clientX;
+      pointer.y = event.clientY;
+      pointer.active = true;
+      if (rafId === null) rafId = requestAnimationFrame(magnetFrame);
+    }, { passive: true });
+
+    section.addEventListener("pointerleave", () => {
+      pointer.active = false;
+      if (rafId === null) rafId = requestAnimationFrame(magnetFrame);
+    }, { passive: true });
+  }
+})();
 // End Sudil Script 
+
+
 
 
 
